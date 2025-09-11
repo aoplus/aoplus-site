@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Loader2, Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,8 +18,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { handleContactSubmission } from "@/app/actions";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { siteConfig } from "@/lib/site";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -48,22 +48,20 @@ export function ContactForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    startTransition(async () => {
-      const result = await handleContactSubmission(values);
-      if (result.success) {
+    startTransition(() => {
+        const subject = `Contact Form Submission from ${values.name}`;
+        const body = `Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`;
+        const mailtoLink = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        window.location.href = mailtoLink;
+        
         toast({
-          title: "Message Sent!",
-          description: "We've received your message and will get back to you shortly.",
+          title: "Email Client Opened",
+          description: "Please send the email using your default email client.",
         });
+
         setIsSuccess(true);
         form.reset();
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: result.message || "There was a problem with your request.",
-        });
-      }
     });
   }
 
@@ -71,10 +69,10 @@ export function ContactForm() {
     return (
         <Card className="flex h-full flex-col items-center justify-center bg-secondary/50 p-8 text-center">
             <div className="mb-4 rounded-full bg-primary p-3">
-                <Send className="h-8 w-8 text-primary-foreground" />
+                <Mail className="h-8 w-8 text-primary-foreground" />
             </div>
             <h3 className="text-2xl font-bold">Thank You!</h3>
-            <p className="text-muted-foreground">Your message has been sent successfully.</p>
+            <p className="text-muted-foreground">Your email client has been opened to send your message.</p>
             <Button variant="link" onClick={() => setIsSuccess(false)}>Send another message</Button>
         </Card>
     )
@@ -134,7 +132,7 @@ export function ContactForm() {
                 />
                 <Button type="submit" disabled={isPending} className="w-full">
                 {isPending ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <Send className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
                     <Send className="mr-2 h-4 w-4" />
                 )}
