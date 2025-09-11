@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function InvestorsPage() {
     const deckImage = PlaceHolderImages.find((img) => img.id === 'investor-deck');
   return (
-    <div className="container py-16 md:py-24">
+    <div className="py-16 md:py-24">
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
         <div>
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">

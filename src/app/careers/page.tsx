@@ -25,7 +25,7 @@ export default function CareersPage() {
     const heroImage = PlaceHolderImages.find((img) => img.id === 'career-hero');
   return (
     <div>
-      <section className="relative w-full bg-secondary/50">
+      <section className="relative w-full bg-secondary/50 -mx-4 sm:-mx-6 md:-mx-8">
         {heroImage && (
              <Image
                 src={heroImage.imageUrl}
@@ -47,7 +47,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="container py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <h2 className="mb-10 text-center font-headline text-3xl font-bold sm:text-4xl">
           Open Positions
         </h2>

@@ -16,7 +16,7 @@ export default function ContactPage() {
     (img) => img.id === "contact-hero"
   );
   return (
-    <div className="container py-16 md:py-24">
+    <div className="py-16 md:py-24">
       <div className="mx-auto mb-12 max-w-2xl text-center">
         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
           Get in Touch

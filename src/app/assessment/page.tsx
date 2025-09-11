@@ -72,7 +72,7 @@ export default function AssessmentPage() {
   }
 
   return (
-    <div className="container max-w-3xl py-16 md:py-24">
+    <div className="max-w-3xl mx-auto py-16 md:py-24">
       <div className="mb-10 text-center">
         <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
           Free FinOps Assessment
