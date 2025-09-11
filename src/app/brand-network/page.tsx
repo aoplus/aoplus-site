@@ -42,7 +42,7 @@ export default function BrandNetworkPage() {
             <Card key={brand.id} className="flex flex-col">
               <CardHeader>
                 {brandLogo && (
-                  <div className="mb-4 flex h-16 justify-center">
+                  <div className="mb-4 flex h-16 items-center justify-center">
                     <Image
                       src={brandLogo.imageUrl}
                       alt={`${brand.name} logo`}
@@ -56,7 +56,7 @@ export default function BrandNetworkPage() {
                 <CardTitle>{brand.name}</CardTitle>
                 <CardDescription>{brand.role}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-1">
+              <CardContent className="flex-grow">
                 <p className="text-sm text-muted-foreground">{brand.shortDesc}</p>
               </CardContent>
               <CardFooter>
