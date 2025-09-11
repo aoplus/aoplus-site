@@ -1,3 +1,82 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "aoplus-logo",
+      "description": "AO+ Solutions Logo",
+      "imageUrl": "https://picsum.photos/seed/aopluslogo/200/60",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "aoplus-hero",
+      "description": "Abstract image of intelligent infrastructure",
+      "imageUrl": "https://picsum.photos/seed/aoplushero/600/400",
+      "imageHint": "abstract technology"
+    },
+    {
+      "id": "prodory-logo",
+      "description": "Prodory Logo",
+      "imageUrl": "https://picsum.photos/seed/prodorylogo/200/60",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "digiads-logo",
+      "description": "DigiAds.click Logo",
+      "imageUrl": "https://picsum.photos/seed/digiadslogo/200/60",
+      "imageHint": "marketing logo"
+    },
+    {
+      "id": "palavanews-logo",
+      "description": "PalavaNews.com Logo",
+      "imageUrl": "https://picsum.photos/seed/palavanewslogo/200/60",
+      "imageHint": "news logo"
+    },
+    {
+      "id": "indombivili-logo",
+      "description": "IndoMbivili.com Logo",
+      "imageUrl": "https://picsum.photos/seed/indombivililogo/200/60",
+      "imageHint": "real estate logo"
+    },
+    {
+      "id": "primesale-logo",
+      "description": "PrimeSale.in Logo",
+      "imageUrl": "https://picsum.photos/seed/primesalelogo/200/60",
+      "imageHint": "ecommerce logo"
+    },
+    {
+      "id": "dailydeals-logo",
+      "description": "DailyDeals.in Logo",
+      "imageUrl": "https://picsum.photos/seed/dailydealslogo/200/60",
+      "imageHint": "deals logo"
+    },
+    {
+      "id": "satvikcloud-logo",
+      "description": "SatvikCloud.com Logo",
+      "imageUrl": "https://picsum.photos/seed/satvikcloudlogo/200/60",
+      "imageHint": "cloud logo"
+    },
+    {
+      "id": "kindcard-logo",
+      "description": "KindCard.com Logo",
+      "imageUrl": "https://picsum.photos/seed/kindcardlogo/200/60",
+      "imageHint": "greeting card logo"
+    },
+    {
+      "id": "investor-deck",
+      "description": "Image of an investor presentation",
+      "imageUrl": "https://picsum.photos/seed/investordeck/500/300",
+      "imageHint": "business presentation"
+    },
+    {
+      "id": "career-hero",
+      "description": "Image of a modern office environment",
+      "imageUrl": "https://picsum.photos/seed/careerhero/1200/400",
+      "imageHint": "modern office"
+    },
+    {
+      "id": "contact-hero",
+      "description": "Abstract image representing communication and connection",
+      "imageUrl": "https://picsum.photos/seed/contacthero/500/300",
+      "imageHint": "abstract communication"
+    }
+  ]
 }
