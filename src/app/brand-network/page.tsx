@@ -40,7 +40,7 @@ export default function BrandNetworkPage() {
           );
           return (
             <Card key={brand.id} className="flex flex-col">
-              <CardHeader>
+              <CardHeader className="text-center">
                 {brandLogo && (
                   <div className="mb-4 flex h-16 items-center justify-center">
                     <Image
@@ -53,11 +53,11 @@ export default function BrandNetworkPage() {
                     />
                   </div>
                 )}
-                <CardTitle>{brand.name}</CardTitle>
+                <CardTitle className="text-center">{brand.name}</CardTitle>
                 <CardDescription>{brand.role}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-sm text-muted-foreground">{brand.shortDesc}</p>
+                <p className="text-sm text-muted-foreground text-center">{brand.shortDesc}</p>
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full">
