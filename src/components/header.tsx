@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Atom, ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -25,7 +26,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Atom className="h-6 w-6" />
+          <Image src="/assets/aoplus-logo.png" alt="AO+ Solutions Logo" width={24} height={24} />
           <span className="font-bold">{siteConfig.name}</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
@@ -71,7 +72,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <Link href="/" className="mr-6 flex items-center space-x-2">
-                 <Atom className="h-6 w-6" />
+                 <Image src="/assets/aoplus-logo.png" alt="AO+ Solutions Logo" width={24} height={24} />
                 <span className="font-bold">{siteConfig.name}</span>
               </Link>
               <div className="mt-6 flex flex-col gap-4">

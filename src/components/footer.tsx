@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Atom, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
 import { siteConfig } from "@/lib/site";
 import { brands } from "@/lib/brands";
 
@@ -9,7 +10,7 @@ export function Footer() {
       <div className="container grid grid-cols-2 gap-8 px-4 py-12 md:grid-cols-4 md:px-6">
         <div className="col-span-2 flex flex-col gap-4 md:col-span-1">
           <Link href="/" className="flex items-center gap-2">
-            <Atom className="h-6 w-6" />
+            <Image src="/assets/aoplus-logo.png" alt="AO+ Solutions Logo" width={24} height={24} />
             <span className="font-bold">{siteConfig.name}</span>
           </Link>
           <p className="text-sm text-muted-foreground">
