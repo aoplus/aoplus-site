@@ -1057,27 +1057,33 @@ export default function InvestorDeckPage() {
     const nextButton = document.querySelector('.nav-button[data-action="next"]');
     const prevButton = document.querySelector('.nav-button[data-action="prev"]');
 
-    if(ctaButton) ctaButton.addEventListener('click', nextSlide);
-    if(contactButton) contactButton.addEventListener('click', () => window.open('mailto:investors@aoplus.in', '_blank'));
-    if(nextButton) nextButton.addEventListener('click', nextSlide);
-    if(prevButton) prevButton.addEventListener('click', previousSlide);
+    const ctaClickHandler = () => nextSlide();
+    const contactClickHandler = () => window.open('mailto:investors@aoplus.in', '_blank');
+    const nextClickHandler = () => nextSlide();
+    const prevClickHandler = () => previousSlide();
+
+    if(ctaButton) ctaButton.addEventListener('click', ctaClickHandler);
+    if(contactButton) contactButton.addEventListener('click', contactClickHandler);
+    if(nextButton) nextButton.addEventListener('click', nextClickHandler);
+    if(prevButton) prevButton.addEventListener('click', prevClickHandler);
     document.addEventListener("keydown", handleKeyDown);
 
     // Auto-advance progress bars after a short delay
     const progressTimeout = setTimeout(() => {
         document.querySelectorAll('.progress-fill').forEach(bar => {
             if (bar instanceof HTMLElement) {
-                bar.style.width = bar.style.width || '0%';
+                // This will trigger the animation defined in the CSS
+                bar.style.width = bar.getAttribute('style')?.match(/width:\s*(\d+%)?/)?.[1] || '0%';
             }
         });
     }, 500);
 
     // Cleanup function to remove event listeners
     return () => {
-      if(ctaButton) ctaButton.removeEventListener('click', nextSlide);
-      if(contactButton) contactButton.removeEventListener('click', () => window.open('mailto:investors@aoplus.in', '_blank'));
-      if(nextButton) nextButton.removeEventListener('click', nextSlide);
-      if(prevButton) prevButton.removeEventListener('click', previousSlide);
+      if(ctaButton) ctaButton.removeEventListener('click', ctaClickHandler);
+      if(contactButton) contactButton.removeEventListener('click', contactClickHandler);
+      if(nextButton) nextButton.removeEventListener('click', nextClickHandler);
+      if(prevButton) prevButton.removeEventListener('click', prevClickHandler);
       document.removeEventListener("keydown", handleKeyDown);
       clearTimeout(progressTimeout);
     };
