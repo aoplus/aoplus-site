@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useTransition } from "react";
-import { Metadata } from "next";
+import { sendEmail } from "@/ai/flows/send-email-flow";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -36,11 +36,6 @@ const formSchema = z.object({
   answers: z.string().min(20, "Please provide more details (at least 20 characters)."),
 });
 
-// This would be part of layout.tsx but we can't modify it.
-// export const metadata: Metadata = {
-//   title: "Free FinOps Assessment | AO+ Solutions",
-//   description: "Request a free FinOps assessment to optimize your cloud spending and improve efficiency.",
-// };
 
 export default function AssessmentPage() {
   const [isPending, startTransition] = useTransition();
@@ -59,15 +54,43 @@ export default function AssessmentPage() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    startTransition(() => {
-        // Here you would call a server action e.g. `submitAssessment(values)`
-        console.log("Assessment form submitted:", values);
-        toast({
-            title: "Request Submitted!",
-            description: "We've received your assessment request and will be in touch soon.",
+    startTransition(async () => {
+      try {
+        const subject = `New FinOps Assessment Request from ${values.name}`;
+        const body = `
+Name: ${values.name}
+Company: ${values.company}
+Email: ${values.email}
+Product of Interest: ${values.productInterest}
+
+Infrastructure Details:
+${values.answers}
+        `;
+
+        const result = await sendEmail({
+          from: values.email,
+          subject,
+          text: body,
         });
-        setIsSuccess(true);
-        form.reset();
+
+        if (result.success) {
+          toast({
+              title: "Request Submitted!",
+              description: "We've received your assessment request and will be in touch soon.",
+          });
+          setIsSuccess(true);
+          form.reset();
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        console.error("Failed to send assessment email:", error);
+        toast({
+            title: "Something went wrong.",
+            description: "Could not submit your request. Please try again later.",
+            variant: "destructive",
+        });
+      }
     });
   }
 

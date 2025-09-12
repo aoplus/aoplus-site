@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Mail, Send } from "lucide-react";
+import { Loader2, Mail, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { siteConfig } from "@/lib/site";
+import { sendEmail } from "@/ai/flows/send-email-flow";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -48,20 +48,37 @@ export function ContactForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    startTransition(() => {
-        const subject = `Contact Form Submission from ${values.name}`;
-        const body = `Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`;
-        const mailtoLink = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    startTransition(async () => {
+        try {
+            const subject = `Contact Form Submission from ${values.name}`;
+            const body = `Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`;
+            
+            const result = await sendEmail({
+              from: values.email,
+              subject,
+              text: body,
+            });
+            
+            if (result.success) {
+                toast({
+                  title: "Message Sent!",
+                  description: "Thanks for reaching out. We'll get back to you shortly.",
+                });
         
-        window.location.href = mailtoLink;
-        
-        toast({
-          title: "Email Client Opened",
-          description: "Please send the email using your default email client.",
-        });
+                setIsSuccess(true);
+                form.reset();
+            } else {
+              throw new Error(result.message);
+            }
 
-        setIsSuccess(true);
-        form.reset();
+        } catch(error) {
+            console.error("Failed to send contact email:", error);
+            toast({
+                title: "Something went wrong.",
+                description: "Could not send your message. Please try again later.",
+                variant: "destructive",
+            });
+        }
     });
   }
 
@@ -72,7 +89,7 @@ export function ContactForm() {
                 <Mail className="h-8 w-8 text-primary-foreground" />
             </div>
             <h3 className="text-2xl font-bold">Thank You!</h3>
-            <p className="text-muted-foreground">Your email client has been opened to send your message.</p>
+            <p className="text-muted-foreground">Your message has been sent successfully.</p>
             <Button variant="link" onClick={() => setIsSuccess(false)}>Send another message</Button>
         </Card>
     )
@@ -132,7 +149,7 @@ export function ContactForm() {
                 />
                 <Button type="submit" disabled={isPending} className="w-full">
                 {isPending ? (
-                    <Send className="mr-2 h-4 w-4 animate-spin" />
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
                     <Send className="mr-2 h-4 w-4" />
                 )}
