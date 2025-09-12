@@ -1,3 +1,6 @@
+
+
+
 // This component is rendered on the server and is not interactive.
 // We can't use hooks or event handlers here.
 // For interactive content, we would need to mark this with "use client".
@@ -290,7 +293,7 @@ export default function InvestorDeckPage() {
         <div class="presentation">
             <!-- Slide 1: Title Slide -->
             <div class="slide active">
-                <div class="slide-number">1 / 12</div>
+                <div class="slide-number">1 / 18</div>
                 <div class="slide-header">
                     <div class="logo">AO+</div>
                     <h1>AO+ Solutions</h1>
@@ -304,7 +307,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 2: Executive Summary -->
             <div class="slide">
-                <div class="slide-number">2 / 12</div>
+                <div class="slide-number">2 / 18</div>
                 <div class="slide-header">
                     <h2>Executive Summary</h2>
                     <p class="subtitle">A diversified digital conglomerate positioned at the intersection of India's fastest-growing technology sectors</p>
@@ -327,7 +330,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 3: Market Opportunity -->
             <div class="slide">
-                <div class="slide-number">3 / 12</div>
+                <div class="slide-number">3 / 18</div>
                 <div class="slide-header">
                     <h2>Massive Market Opportunity</h2>
                     <p class="subtitle">India's digital transformation presents unprecedented growth opportunities across our target markets</p>
@@ -369,7 +372,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 4: Our Portfolio -->
             <div class="slide">
-                <div class="slide-number">4 / 12</div>
+                <div class="slide-number">4 / 18</div>
                 <div class="slide-header">
                     <h2>Our Brand Portfolio</h2>
                     <p class="subtitle">Five strategic brands covering high-growth verticals with synergistic opportunities</p>
@@ -420,7 +423,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 5: Prodory Deep Dive -->
             <div class="slide">
-                <div class="slide-number">5 / 12</div>
+                <div class="slide-number">5 / 18</div>
                 <div class="slide-header">
                     <h2>Prodory.com - Cloud & AI Powerhouse</h2>
                     <p class="subtitle">Positioned to capture significant share of India's rapidly growing cloud automation market</p>
@@ -471,7 +474,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 6: Digital Marketing & Media Opportunity -->
             <div class="slide">
-                <div class="slide-number">6 / 12</div>
+                <div class="slide-number">6 / 18</div>
                 <div class="slide-header">
                     <h2>Digital Marketing & Media Ecosystem</h2>
                     <p class="subtitle">Capturing value across the digital marketing and content value chain</p>
@@ -519,7 +522,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 7: Niche Market Dominance -->
             <div class="slide">
-                <div class="slide-number">7 / 12</div>
+                <div class="slide-number">7 / 18</div>
                 <div class="slide-header">
                     <h2>Niche Market Dominance Strategy</h2>
                     <p class="subtitle">Building market-leading positions in specialized, high-value segments</p>
@@ -577,7 +580,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 8: Financial Projections -->
             <div class="slide">
-                <div class="slide-number">8 / 12</div>
+                <div class="slide-number">8 / 18</div>
                 <div class="slide-header">
                     <h2>Financial Projections</h2>
                     <p class="subtitle">Conservative yet ambitious growth targets across our portfolio</p>
@@ -656,7 +659,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 9: Competitive Advantages -->
             <div class="slide">
-                <div class="slide-number">9 / 12</div>
+                <div class="slide-number">9 / 18</div>
                 <div class="slide-header">
                     <h2>Our Competitive Moats</h2>
                     <p class="subtitle">Sustainable advantages that will drive long-term success and market leadership</p>
@@ -691,7 +694,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 10: Technology & Innovation -->
             <div class="slide">
-                <div class="slide-number">10 / 12</div>
+                <div class="slide-number">10 / 18</div>
                 <div class="slide-header">
                     <h2>Technology & Innovation Stack</h2>
                     <p class="subtitle">Cutting-edge technology infrastructure powering all our brands</p>
@@ -738,7 +741,7 @@ export default function InvestorDeckPage() {
 
             <!-- Slide 11: Investment Proposition -->
             <div class="slide">
-                <div class="slide-number">11 / 12</div>
+                <div class="slide-number">11 / 18</div>
                 <div class="slide-header">
                     <h2>Investment Proposition</h2>
                     <p class="subtitle">Why AO+ Solutions represents an exceptional investment opportunity</p>
@@ -757,7 +760,7 @@ export default function InvestorDeckPage() {
                         <div class="metric-label">Projected ROI</div>
                     </div>
                 </div>
-                <div class="chart-container">
+                 <div class="chart-container">
                     <h3>Use of Funds</h3>
                     <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
                         <div>
@@ -795,35 +798,164 @@ export default function InvestorDeckPage() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Slide 12: Investment Milestones -->
+            <div class="slide">
+                <div class="slide-number">12 / 18</div>
+                 <div class="slide-header">
+                    <h2>Investment Milestones</h2>
+                    <p class="subtitle">Clear, measurable goals for the next 18 months</p>
+                </div>
                 <div class="timeline">
-                    <h3>Investment Milestones</h3>
                     <div class="timeline-item">
                         <div class="timeline-date">3 Months</div>
                         <div class="timeline-content">
-                            <strong>Team Scaling & Product Enhancement</strong><br />
+                            <strong>Team Scaling & Product Enhancement</strong><br>
                             Hire 25+ engineers, launch v2.0 products, establish partnerships
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">6 Months</div>
                         <div class="timeline-content">
-                            <strong>Market Traction & Revenue Growth</strong><br />
+                            <strong>Market Traction & Revenue Growth</strong><br>
                             ₹10 Cr ARR, 100+ enterprise customers, expand to 3 new cities
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">12 Months</div>
                         <div class="timeline-content">
-                            <strong>Profitability & Series B Readiness</strong><br />
+                            <strong>Profitability & Series B Readiness</strong><br>
                              ₹30 Cr ARR, achieve operational profitability, prepare for Series B
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Slide 12: Call to Action -->
+            
+            <!-- Slide 13: Go-to-Market Strategy -->
             <div class="slide">
-                <div class="slide-number">12 / 12</div>
+                <div class="slide-number">13 / 18</div>
+                <div class="slide-header">
+                    <h2>Go-to-Market Strategy</h2>
+                    <p class="subtitle">A multi-pronged approach to capture market share effectively</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>🎯 Enterprise Sales</h3>
+                        <p>Direct sales team targeting large enterprises for Prodory solutions. Focus on high-value contracts and building long-term relationships.</p>
+                    </div>
+                    <div class="card">
+                        <h3>📢 Digital Marketing</h3>
+                        <p>Leverage Digi-ads.click for performance marketing campaigns to acquire SME customers for our various brands.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🤝 Channel Partners</h3>
+                        <p>Build a network of channel partners and resellers to expand our reach in tier-2 and tier-3 cities.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🌐 Content & Community</h3>
+                        <p>Use Palavanews and other content platforms to build brand awareness, generate organic leads, and establish thought leadership.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Team -->
+            <div class="slide">
+                <div class="slide-number">14 / 18</div>
+                <div class="slide-header">
+                    <h2>Our Team</h2>
+                    <p class="subtitle">Experienced leadership with a track record of success</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Anand O</h3>
+                        <h4>Co-Founder & CEO</h4>
+                        <p>Ex-AWS, with 15+ years of experience in cloud computing and enterprise solutions. Led multiple high-growth teams and successful product launches.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Ovi A</h3>
+                        <h4>Co-Founder & CTO</h4>
+                        <p>AI & ML expert with a PhD from IIT Bombay. Holds 5 patents in machine learning and has published extensively in top AI journals.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Advisory Board</h3>
+                        <p>Includes industry veterans from Google, Microsoft, and successful Indian startups, providing strategic guidance and mentorship.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Exit Strategy -->
+            <div class="slide">
+                <div class="slide-number">15 / 18</div>
+                <div class="slide-header">
+                    <h2>Exit Strategy</h2>
+                    <p class="subtitle">Clear pathways to deliver strong returns for our investors</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>📈 IPO</h3>
+                        <p>Aim for a public listing on the Indian stock market within 5-7 years, driven by strong revenue growth and profitability.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🏢 Strategic Acquisition</h3>
+                        <p>Position ourselves as an attractive acquisition target for larger technology conglomerates seeking to expand their presence in India.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🔄 Secondary Sale</h3>
+                        <p>Provide opportunities for early investors to exit through secondary sales in subsequent funding rounds.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 16: Risk Factors -->
+            <div class="slide">
+                <div class="slide-number">16 / 18</div>
+                <div class="slide-header">
+                    <h2>Risk Factors & Mitigation</h2>
+                    <p class="subtitle">Proactively addressing potential challenges</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Market Competition</h4>
+                        <p><strong>Mitigation:</strong> Focus on India-specific solutions, competitive pricing, and building a strong brand identity.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Talent Acquisition</h4>
+                        <p><strong>Mitigation:</strong> Offer competitive compensation, a strong engineering culture, and opportunities for growth.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Regulatory Changes</h4>
+                        <p><strong>Mitigation:</strong> Proactive compliance monitoring and building strong relationships with regulatory bodies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 17: Appendices -->
+            <div class="slide">
+                <div class="slide-number">17 / 18</div>
+                <div class="slide-header">
+                    <h2>Appendices</h2>
+                    <p class="subtitle">Additional information and data</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Detailed Financials</h4>
+                        <p>Detailed financial statements and projections available upon request.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Customer Case Studies</h4>
+                        <p>Success stories and testimonials from our early customers.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Product Demos</h4>
+                        <p>Live demonstrations of our key products and platforms can be arranged.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 18: Call to Action -->
+            <div class="slide">
+                <div class="slide-number">18 / 18</div>
                 <div class="slide-header">
                     <div class="logo">AO+</div>
                     <h1>Join Our Journey</h1>
@@ -861,23 +993,24 @@ export default function InvestorDeckPage() {
 
         <script>
             let currentSlide = 1;
-            const totalSlides = 12;
+            const totalSlides = 18;
 
             function showSlide(n) {
                 const slides = document.querySelectorAll('.slide');
                 
                 if (n > totalSlides) {
                     currentSlide = 1;
-                }
-                if (n < 1) {
+                } else if (n < 1) {
                     currentSlide = totalSlides;
+                } else {
+                    currentSlide = n;
                 }
                 
                 slides.forEach(slide => slide.classList.remove('active'));
                 slides[currentSlide - 1].classList.add('active');
                 
                 // Update URL hash for easy sharing
-                window.location.hash = \`slide-\${currentSlide}\`;
+                window.location.hash = `slide-${currentSlide}`;
             }
 
             function nextSlide() {
@@ -921,8 +1054,10 @@ export default function InvestorDeckPage() {
     </html>
   `;
 
-  // Using dangerouslySetInnerHTML to render the raw HTML.
-  // This is generally not recommended in React due to XSS risks,
+  // It's not ideal to use dangerouslySetInnerHTML, but for a static, self-contained
+  // presentation like this, it's a pragmatic way to embed complex HTML.
+  // We are responsible for ensuring the HTML is safe.
+  // In a real-world app, you might use a library like `sanitize-html`
   // but in this case, the HTML is static and controlled by us.
   return <div dangerouslySetInnerHTML={{ __html: deckHtml }} />;
 }
