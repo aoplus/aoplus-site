@@ -47,9 +47,9 @@ export default function BrandNetworkPage() {
                       src={brandLogo.imageUrl}
                       alt={`${brand.name} logo`}
                       data-ai-hint={brandLogo.imageHint}
-                      width={200}
-                      height={80}
-                      className="object-contain"
+                      width={180}
+                      height={72}
+                      className="h-full w-auto object-contain"
                     />
                   </div>
                 )}
