@@ -1,6 +1,3 @@
-
-
-
 // This component is rendered on the server and is not interactive.
 // We can't use hooks or event handlers here.
 // For interactive content, we would need to mark this with "use client".
@@ -1010,7 +1007,7 @@ export default function InvestorDeckPage() {
                 slides[currentSlide - 1].classList.add('active');
                 
                 // Update URL hash for easy sharing
-                window.location.hash = `slide-${currentSlide}`;
+                window.location.hash = \`slide-\${currentSlide}\`;
             }
 
             function nextSlide() {
@@ -1052,7 +1049,7 @@ export default function InvestorDeckPage() {
         </script>
     </body>
     </html>
-  `;
+`;
 
   // It's not ideal to use dangerouslySetInnerHTML, but for a static, self-contained
   // presentation like this, it's a pragmatic way to embed complex HTML.
