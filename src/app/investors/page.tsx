@@ -23,56 +23,175 @@ export const metadata: Metadata = {
 };
 
 const InvestorIllustration = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 500 300"
-      aria-hidden="true"
-      {...props}
-    >
-      <defs>
-        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.1} />
-          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity={0} />
-        </linearGradient>
-      </defs>
-      <g fill="none" fillRule="evenodd">
-        <rect
-          fill="hsl(var(--card))"
-          width="500"
-          height="300"
-          rx="12"
-        />
-        <path
-          fill="url(#a)"
-          d="M110 210h280v-10.45c0-2.35-1.12-4.58-3.02-6.05l-44.1-33.68c-2.38-1.82-5.75-1.42-7.6.98L297 200.75c-1.85 2.4-5.07 3.2-7.9 1.9l-58.2-27.1c-2.83-1.32-6.13-.37-7.85 2.1l-40.4 57.55c-1.72 2.45-4.72 3.65-7.65 2.85z"
-        />
-        <path
-          stroke="hsl(var(--primary))"
-          strokeWidth="2"
-          strokeLinecap="round"
-          d="M112.5 204.5l82-105c1.6-2.05 4.6-2.6 6.95-1.45l58.2 27.1c2.35 1.1 5.15.5 6.95-1.45l35.9-38.8"
-        />
-        <g transform="translate(340 50)" fill="hsl(var(--primary))">
-          <circle cx="15" cy="15" r="15" opacity=".2" />
-          <path d="M14.2 8.4a.8.8 0 01.8-.8c2.87 0 5.2 2.33 5.2 5.2a.8.8 0 01-1.6 0c0-1.99-1.61-3.6-3.6-3.6a.8.8 0 01-.8-.8z" />
-          <path d="M15.4 17h-1.03l-2.4-3.52-2.38 3.51H8.57l3.58-5.2-3.43-5.08h1.03l2.25 3.3 2.22-3.3h1.03l-3.43 5.08L15.4 17z" />
-        </g>
-        <g transform="translate(100 80)">
-          <path
-            d="M20 40.5c11.05 0 20-8.95 20-20s-8.95-20-20-20-20 8.95-20 20 8.95 20 20 20z"
-            stroke="hsl(var(--accent))"
-            strokeOpacity=".25"
-            strokeWidth="3"
-          />
-          <path
-            d="M20 40c11.05 0 20-8.95 20-20S31.05 0 20 0"
-            stroke="hsl(var(--accent))"
-            strokeWidth="3"
-            strokeLinecap="round"
-          />
-        </g>
+    <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <defs>
+      {/* Gradients */}
+      <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#667eea', stopOpacity: 1}} />
+        <stop offset="50%" style={{stopColor: '#764ba2', stopOpacity: 1}} />
+        <stop offset="100%" style={{stopColor: '#667eea', stopOpacity: 1}} />
+      </linearGradient>
+      
+      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{stopColor: '#4facfe', stopOpacity: 1}} />
+        <stop offset="100%" style={{stopColor: '#00f2fe', stopOpacity: 1}} />
+      </linearGradient>
+      
+      <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" style={{stopColor: '#ffffff', stopOpacity: 0.3}} />
+        <stop offset="100%" style={{stopColor: '#ffffff', stopOpacity: 0}} />
+      </radialGradient>
+      
+      {/* Patterns */}
+      <pattern id="gridPattern" patternUnits="userSpaceOnUse" width="40" height="40">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.1"/>
+      </pattern>
+    </defs>
+    
+    {/* Background */}
+    <rect width="1200" height="600" fill="url(#heroGradient)"/>
+    
+    {/* Grid pattern overlay */}
+    <rect width="1200" height="600" fill="url(#gridPattern)"/>
+    
+    {/* India map silhouette (simplified) */}
+    <g transform="translate(800, 100)" opacity="0.1">
+      <path d="M 120 50 Q 150 30 180 60 Q 200 40 220 70 Q 240 50 260 80 L 280 100 Q 290 120 280 140 L 270 160 Q 280 180 270 200 L 260 220 Q 250 240 230 250 L 200 260 Q 180 270 160 260 L 140 250 Q 120 240 110 220 L 100 200 Q 90 180 100 160 L 110 140 Q 100 120 110 100 Z" 
+            fill="#ffffff" stroke="none"/>
+    </g>
+    
+    {/* Abstract network connections */}
+    <g opacity="0.3">
+      {/* Network nodes */}
+      <circle cx="200" cy="150" r="8" fill="#4facfe"/>
+      <circle cx="350" cy="120" r="6" fill="#00f2fe"/>
+      <circle cx="500" cy="180" r="10" fill="#4facfe"/>
+      <circle cx="650" cy="140" r="7" fill="#00f2fe"/>
+      <circle cx="800" cy="200" r="9" fill="#4facfe"/>
+      
+      {/* Connection lines */}
+      <line x1="200" y1="150" x2="350" y2="120" stroke="#ffffff" strokeWidth="2" opacity="0.4"/>
+      <line x1="350" y1="120" x2="500" y2="180" stroke="#ffffff" strokeWidth="2" opacity="0.4"/>
+      <line x1="500" y1="180" x2="650" y2="140" stroke="#ffffff" strokeWidth="2" opacity="0.4"/>
+      <line x1="650" y1="140" x2="800" y2="200" stroke="#ffffff" strokeWidth="2" opacity="0.4"/>
+      <line x1="200" y1="150" x2="500" y2="180" stroke="#ffffff" strokeWidth="1" opacity="0.3"/>
+      <line x1="350" y1="120" x2="800" y2="200" stroke="#ffffff" strokeWidth="1" opacity="0.3"/>
+    </g>
+    
+    {/* Cloud infrastructure icons */}
+    <g transform="translate(850, 350)" opacity="0.2">
+      {/* Cloud 1 */}
+      <path d="M 20 30 Q 10 20 20 10 Q 30 5 40 10 Q 50 0 60 10 Q 70 15 60 25 Q 65 35 55 35 L 25 35 Z" fill="#ffffff"/>
+      
+      {/* Cloud 2 */}
+      <g transform="translate(40, 20)">
+        <path d="M 15 25 Q 5 15 15 5 Q 25 0 35 5 Q 45 -5 55 5 Q 65 10 55 20 Q 60 30 50 30 L 20 30 Z" fill="#ffffff"/>
       </g>
-    </svg>
+      
+      {/* Cloud 3 */}
+      <g transform="translate(-10, 40)">
+        <path d="M 25 35 Q 15 25 25 15 Q 35 10 45 15 Q 55 5 65 15 Q 75 20 65 30 Q 70 40 60 40 L 30 40 Z" fill="#ffffff"/>
+      </g>
+    </g>
+    
+    {/* Main Logo */}
+    <g transform="translate(80, 200)">
+      {/* Logo background circle */}
+      <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" opacity="0.9"/>
+      <circle cx="50" cy="50" r="45" fill="url(#glowGradient)"/>
+      
+      {/* AO+ text */}
+      <text x="50" y="45" textAnchor="middle" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold">AO</text>
+      <text x="50" y="68" textAnchor="middle" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="18" fontWeight="bold">+</text>
+    </g>
+    
+    {/* Main heading */}
+    <text x="200" y="250" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="48" fontWeight="bold">
+      AO+ Solutions
+    </text>
+    
+    {/* Subheading */}
+    <text x="200" y="290" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="300" opacity="0.9">
+      Investing in India's Digital Future
+    </text>
+    
+    {/* Key metrics */}
+    <g transform="translate(200, 350)">
+      {/* Metric boxes */}
+      <g>
+        <rect x="0" y="0" width="150" height="80" rx="8" fill="#ffffff" fillOpacity="0.15"/>
+        <text x="75" y="30" textAnchor="middle" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="bold">$300B+</text>
+        <text x="75" y="55" textAnchor="middle" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="12" opacity="0.8">Market Size</text>
+      </g>
+      
+      <g transform="translate(170, 0)">
+        <rect x="0" y="0" width="150" height="80" rx="8" fill="#ffffff" fillOpacity="0.15"/>
+        <text x="75" y="30" textAnchor="middle" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="bold">43%</text>
+        <text x="75" y="55" textAnchor="middle" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="12" opacity="0.8">Projected CAGR</text>
+      </g>
+      
+      <g transform="translate(340, 0)">
+        <rect x="0" y="0" width="150" height="80" rx="8" fill="#ffffff" fillOpacity="0.15"/>
+        <text x="75" y="30" textAnchor="middle" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="bold">5 Brands</text>
+        <text x="75" y="55" textAnchor="middle" fill="#ffffff" fontFamily="Arial, sans-serif" fontSize="12" opacity="0.8">Portfolio</text>
+      </g>
+    </g>
+    
+    {/* Technology icons */}
+    <g transform="translate(850, 300)" opacity="0.6">
+      {/* AI Brain icon */}
+      <g>
+        <circle cx="25" cy="25" r="20" fill="none" stroke="#ffffff" strokeWidth="2"/>
+        <circle cx="25" cy="25" r="12" fill="none" stroke="#ffffff" strokeWidth="1.5"/>
+        <circle cx="25" cy="25" r="6" fill="#ffffff"/>
+        <line x1="25" y1="5" x2="25" y2="15" stroke="#ffffff" strokeWidth="1"/>
+        <line x1="25" y1="35" x2="25" y2="45" stroke="#ffffff" strokeWidth="1"/>
+        <line x1="5" y1="25" x2="15" y2="25" stroke="#ffffff" strokeWidth="1"/>
+        <line x1="35" y1="25" x2="45" y2="25" stroke="#ffffff" strokeWidth="1"/>
+      </g>
+      
+      {/* Cloud icon */}
+      <g transform="translate(70, 0)">
+        <path d="M 15 30 Q 5 20 15 10 Q 25 5 35 10 Q 45 0 55 10 Q 65 15 55 25 Q 60 35 50 35 L 20 35 Z" 
+              fill="none" stroke="#ffffff" strokeWidth="2"/>
+      </g>
+      
+      {/* Data/Analytics icon */}
+      <g transform="translate(0, 70)">
+        <rect x="10" y="30" width="8" height="15" fill="#ffffff"/>
+        <rect x="20" y="25" width="8" height="20" fill="#ffffff"/>
+        <rect x="30" y="20" width="8" height="25" fill="#ffffff"/>
+        <rect x="40" y="15" width="8" height="30" fill="#ffffff"/>
+      </g>
+      
+      {/* Mobile/Digital icon */}
+      <g transform="translate(70, 70)">
+        <rect x="15" y="10" width="20" height="35" rx="3" fill="none" stroke="#ffffff" strokeWidth="2"/>
+        <circle cx="25" cy="40" r="2" fill="#ffffff"/>
+        <line x1="20" y1="15" x2="30" y2="15" stroke="#ffffff" strokeWidth="1"/>
+      </g>
+    </g>
+    
+    {/* Floating particles/dots for tech feel */}
+    <g opacity="0.4">
+      <circle cx="300" cy="100" r="3" fill="#4facfe">
+        <animate attributeName="cy" values="100;80;100" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="450" cy="80" r="2" fill="#00f2fe">
+        <animate attributeName="cy" values="80;60;80" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="600" cy="120" r="4" fill="#4facfe">
+        <animate attributeName="cy" values="120;100;120" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="750" cy="90" r="2.5" fill="#00f2fe">
+        <animate attributeName="cy" values="90;70;90" dur="4.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    {/* Bottom accent line */}
+    <rect x="0" y="580" width="1200" height="20" fill="url(#logoGradient)" opacity="0.3"/>
+    
+  </svg>
   );
 
 export default function InvestorsPage() {
