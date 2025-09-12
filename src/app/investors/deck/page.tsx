@@ -1,6 +1,7 @@
-// This component is rendered on the server and is not interactive.
-// We can't use hooks or event handlers here.
-// For interactive content, we would need to mark this with "use client".
+"use client";
+import React, { useEffect, useLayoutEffect } from "react";
+
+// This component is now a client component to handle interactive slides.
 export default function InvestorDeckPage() {
   const deckHtml = `
     <!DOCTYPE html>
@@ -298,7 +299,7 @@ export default function InvestorDeckPage() {
                 </div>
                 <div class="cta">
                     <p style="font-size: 1.2rem; color: #666; margin-bottom: 30px;">Join us on our journey to transform India's digital landscape</p>
-                    <button class="cta-button" onclick="nextSlide()">Explore Our Vision</button>
+                    <button class="cta-button">Explore Our Vision</button>
                 </div>
             </div>
 
@@ -977,79 +978,111 @@ export default function InvestorDeckPage() {
                 </div>
                 <div class="cta">
                     <h2 style="margin-bottom: 20px;">Ready to Invest in India's Digital Future?</h2>
-                    <button class="cta-button" onclick="window.open('mailto:investors@aoplus.in', '_blank')">Contact Us Today</button>
+                    <button class="cta-button" data-action="contact">Contact Us Today</button>
                 </div>
             </div>
         </div>
 
         <!-- Navigation -->
         <div class="navigation">
-            <button class="nav-button" onclick="previousSlide()">← Previous</button>
-            <button class="nav-button" onclick="nextSlide()">Next →</button>
+            <button class="nav-button" data-action="prev">← Previous</button>
+            <button class="nav-button" data-action="next">Next →</button>
         </div>
 
-        <script>
-            let currentSlide = 1;
-            const totalSlides = 18;
-
-            function showSlide(n) {
-                const slides = document.querySelectorAll('.slide');
-                
-                if (n > totalSlides) {
-                    currentSlide = 1;
-                } else if (n < 1) {
-                    currentSlide = totalSlides;
-                } else {
-                    currentSlide = n;
-                }
-                
-                slides.forEach(slide => slide.classList.remove('active'));
-                slides[currentSlide - 1].classList.add('active');
-                
-                // Update URL hash for easy sharing
-                window.location.hash = \`slide-\${currentSlide}\`;
-            }
-
-            function nextSlide() {
-                showSlide(currentSlide + 1);
-            }
-
-            function previousSlide() {
-                showSlide(currentSlide - 1);
-            }
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowRight' || e.key === ' ') {
-                    e.preventDefault();
-                    nextSlide();
-                } else if (e.key === 'ArrowLeft') {
-                    e.preventDefault();
-                    previousSlide();
-                }
-            });
-
-            // Check for hash on load
-            window.addEventListener('load', () => {
-                const hash = window.location.hash;
-                if (hash) {
-                    const slideNumber = parseInt(hash.replace('#slide-', ''));
-                    if (slideNumber >= 1 && slideNumber <= totalSlides) {
-                        showSlide(slideNumber);
-                    }
-                }
-            });
-
-            // Auto-advance progress bars
-            setTimeout(() => {
-                document.querySelectorAll('.progress-fill').forEach(bar => {
-                    bar.style.width = bar.style.width || '0%';
-                });
-            }, 500);
-        </script>
     </body>
     </html>
 `;
+
+  useLayoutEffect(() => {
+    // This effect runs before the browser paints, to prevent flicker.
+    // It sets the initial active slide based on the URL hash.
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash) {
+        const slideNumber = parseInt(hash.replace("#slide-", ""), 10);
+        const slides = document.querySelectorAll(".slide");
+        if (slideNumber >= 1 && slideNumber <= slides.length) {
+          slides.forEach((slide) => slide.classList.remove("active"));
+          slides[slideNumber - 1]?.classList.add("active");
+        }
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    let currentSlide = 1;
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+
+    const showSlide = (n: number) => {
+      if (n > totalSlides) {
+        currentSlide = 1;
+      } else if (n < 1) {
+        currentSlide = totalSlides;
+      } else {
+        currentSlide = n;
+      }
+
+      slides.forEach((slide) => slide.classList.remove("active"));
+      const newActiveSlide = slides[currentSlide - 1];
+      if (newActiveSlide) {
+        newActiveSlide.classList.add("active");
+      }
+      
+      // Using replaceState to avoid cluttering browser history
+      window.history.replaceState(null, "", `#slide-${currentSlide}`);
+    };
+
+    const nextSlide = () => {
+      showSlide(currentSlide + 1);
+    };
+
+    const previousSlide = () => {
+      showSlide(currentSlide - 1);
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight" || e.key === " ") {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        previousSlide();
+      }
+    };
+    
+    // Add event listeners using data-actions for better practice
+    const ctaButton = document.querySelector('.cta-button');
+    const contactButton = document.querySelector('.cta-button[data-action="contact"]');
+    const nextButton = document.querySelector('.nav-button[data-action="next"]');
+    const prevButton = document.querySelector('.nav-button[data-action="prev"]');
+
+    if(ctaButton) ctaButton.addEventListener('click', nextSlide);
+    if(contactButton) contactButton.addEventListener('click', () => window.open('mailto:investors@aoplus.in', '_blank'));
+    if(nextButton) nextButton.addEventListener('click', nextSlide);
+    if(prevButton) prevButton.addEventListener('click', previousSlide);
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Auto-advance progress bars after a short delay
+    const progressTimeout = setTimeout(() => {
+        document.querySelectorAll('.progress-fill').forEach(bar => {
+            if (bar instanceof HTMLElement) {
+                bar.style.width = bar.style.width || '0%';
+            }
+        });
+    }, 500);
+
+    // Cleanup function to remove event listeners
+    return () => {
+      if(ctaButton) ctaButton.removeEventListener('click', nextSlide);
+      if(contactButton) contactButton.removeEventListener('click', () => window.open('mailto:investors@aoplus.in', '_blank'));
+      if(nextButton) nextButton.removeEventListener('click', nextSlide);
+      if(prevButton) prevButton.removeEventListener('click', previousSlide);
+      document.removeEventListener("keydown", handleKeyDown);
+      clearTimeout(progressTimeout);
+    };
+  }, []);
+
   return (
     <div
       dangerouslySetInnerHTML={{
