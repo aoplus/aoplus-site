@@ -69,13 +69,13 @@
     {
       "id": "career-hero",
       "description": "Image of a modern office environment",
-      "imageUrl": "/assets/career-hero.jpg",
+      "imageUrl": "/assets/career-hero.png",
       "imageHint": "modern office"
     },
     {
       "id": "contact-hero",
       "description": "Abstract image representing communication and connection",
-      "imageUrl": "/assets/contact-hero.jpg",
+      "imageUrl": "/assets/contact-hero.png",
       "imageHint": "abstract communication"
     }
   ]
