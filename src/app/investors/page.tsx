@@ -190,12 +190,6 @@ export default function InvestorsPage() {
                 View Interactive Deck
               </Link>
             </Button>
-             <Button size="lg" variant="outline" asChild>
-              <Link href="/investors/deck" target="_blank">
-                <Download className="mr-2" />
-                Download PDF
-              </Link>
-            </Button>
           </div>
         </div>
         <div className="flex justify-center">
