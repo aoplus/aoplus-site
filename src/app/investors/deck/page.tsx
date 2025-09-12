@@ -1050,11 +1050,11 @@ export default function InvestorDeckPage() {
     </body>
     </html>
 `;
-
-  // It's not ideal to use dangerouslySetInnerHTML, but for a static, self-contained
-  // presentation like this, it's a pragmatic way to embed complex HTML.
-  // We are responsible for ensuring the HTML is safe.
-  // In a real-world app, you might use a library like `sanitize-html`
-  // but in this case, the HTML is static and controlled by us.
-  return <div dangerouslySetInnerHTML={{ __html: deckHtml }} />;
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: deckHtml,
+      }}
+    />
+  );
 }
