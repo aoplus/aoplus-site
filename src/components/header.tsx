@@ -12,7 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 import { brands } from "@/lib/brands";
@@ -71,6 +71,12 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Mobile Menu</SheetTitle>
+                <SheetDescription>
+                  A menu of navigation links for the site.
+                </SheetDescription>
+              </SheetHeader>
               <Link href="/" className="mr-6 flex items-center space-x-2">
                  <Image src="/assets/aoplus-logo.png" alt="AO+ Solutions Logo" width={24} height={24} />
                 <span className="font-bold">{siteConfig.name}</span>
