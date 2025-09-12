@@ -3,79 +3,79 @@
     {
       "id": "aoplus-logo",
       "description": "AO+ Solutions Logo",
-      "imageUrl": "https://picsum.photos/seed/aopluslogo/200/60",
+      "imageUrl": "/assets/aoplus-logo.png",
       "imageHint": "company logo"
     },
     {
       "id": "aoplus-hero",
       "description": "Abstract image of intelligent infrastructure",
-      "imageUrl": "https://picsum.photos/seed/aoplushero/600/400",
+      "imageUrl": "/assets/aoplus-hero.jpg",
       "imageHint": "corporate hub"
     },
     {
       "id": "prodory-logo",
       "description": "Prodory Logo",
-      "imageUrl": "https://picsum.photos/seed/prodorylogo/200/60",
+      "imageUrl": "/assets/prodory-logo.png",
       "imageHint": "tech logo"
     },
     {
       "id": "digiads-logo",
       "description": "DigiAds.click Logo",
-      "imageUrl": "https://picsum.photos/seed/digiadslogo/200/60",
+      "imageUrl": "/assets/digiads-logo.png",
       "imageHint": "marketing logo"
     },
     {
       "id": "palavanews-logo",
       "description": "PalavaNews.com Logo",
-      "imageUrl": "https://picsum.photos/seed/palavanewslogo/200/60",
+      "imageUrl": "/assets/palavanews-logo.png",
       "imageHint": "news logo"
     },
     {
       "id": "indombivili-logo",
       "description": "IndoMbivili.com Logo",
-      "imageUrl": "https://picsum.photos/seed/indombivililogo/200/60",
+      "imageUrl": "/assets/indombivili-logo.png",
       "imageHint": "real estate logo"
     },
     {
       "id": "primesale-logo",
       "description": "PrimeSale.in Logo",
-      "imageUrl": "https://picsum.photos/seed/primesalelogo/200/60",
+      "imageUrl": "/assets/primesale-logo.png",
       "imageHint": "ecommerce logo"
     },
     {
       "id": "dailydeals-logo",
       "description": "DailyDeals.in Logo",
-      "imageUrl": "https://picsum.photos/seed/dailydealslogo/200/60",
+      "imageUrl": "/assets/dailydeals-logo.png",
       "imageHint": "deals logo"
     },
     {
       "id": "satvikcloud-logo",
       "description": "SatvikCloud.com Logo",
-      "imageUrl": "https://picsum.photos/seed/satvikcloudlogo/200/60",
+      "imageUrl": "/assets/satvikcloud-logo.png",
       "imageHint": "cloud logo"
     },
     {
       "id": "kindcard-logo",
       "description": "KindCard.com Logo",
-      "imageUrl": "https://picsum.photos/seed/kindcardlogo/200/60",
+      "imageUrl": "/assets/kindcard-logo.png",
       "imageHint": "greeting card logo"
     },
     {
       "id": "investor-deck",
       "description": "Image of an investor presentation",
-      "imageUrl": "https://picsum.photos/seed/investordeck/500/300",
+      "imageUrl": "/assets/investor-deck.jpg",
       "imageHint": "business presentation"
     },
     {
       "id": "career-hero",
       "description": "Image of a modern office environment",
-      "imageUrl": "https://picsum.photos/seed/careerhero/1200/400",
+      "imageUrl": "/assets/career-hero.jpg",
       "imageHint": "modern office"
     },
     {
       "id": "contact-hero",
       "description": "Abstract image representing communication and connection",
-      "imageUrl": "https://picsum.photos/seed/contacthero/500/300",
+      "imageUrl": "/assets/contact-hero.jpg",
       "imageHint": "abstract communication"
     }
   ]

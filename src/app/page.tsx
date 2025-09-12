@@ -33,7 +33,7 @@ export default function Home() {
     <div className="flex-1">
       {/* Hero Section */}
       <section className="w-full bg-background">
-        <div className="grid grid-cols-1 items-center gap-8 px-4 py-16 md:grid-cols-2 md:px-6 md:py-24 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-8 py-16 md:grid-cols-2 md:py-24 lg:gap-16">
           <div className="space-y-6">
             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
               {siteConfig.tagline}
@@ -69,7 +69,7 @@ export default function Home() {
 
       {/* Brand Network Section */}
       <section id="brands" className="w-full bg-secondary/50 py-16 md:py-24">
-        <div className="px-4 md:px-6">
+        <div>
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
               Our Network of Brands
@@ -156,7 +156,7 @@ export default function Home() {
         id="investors"
         className="w-full bg-background py-16 md:py-24"
       >
-        <div className="px-4 md:px-6">
+        <div>
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
               Investor Snapshot
