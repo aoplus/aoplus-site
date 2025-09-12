@@ -105,9 +105,9 @@ export default function Home() {
                                 src={brandLogo.imageUrl}
                                 alt={`${brand.name} logo`}
                                 data-ai-hint={brandLogo.imageHint}
-                                width={150}
-                                height={64}
-                                className="object-contain"
+                                width={200}
+                                height={60}
+                                className="h-full w-auto object-contain"
                               />
                             </div>
                           )}
