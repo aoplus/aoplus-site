@@ -42,13 +42,13 @@ export default function BrandNetworkPage() {
             <Card key={brand.id} className="flex flex-col">
               <CardHeader className="text-center">
                 {brandLogo && (
-                  <div className="mb-4 flex h-16 items-center justify-center">
+                  <div className="mb-4 flex h-20 items-center justify-center">
                     <Image
                       src={brandLogo.imageUrl}
                       alt={`${brand.name} logo`}
                       data-ai-hint={brandLogo.imageHint}
-                      width={180}
-                      height={64}
+                      width={200}
+                      height={80}
                       className="object-contain"
                     />
                   </div>
