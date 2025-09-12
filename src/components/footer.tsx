@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Atom, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Atom, Linkedin, Twitter } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { brands } from "@/lib/brands";
 
@@ -21,9 +21,6 @@ export function Footer() {
             </Link>
             <Link href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5 text-muted-foreground hover:text-foreground" />
-            </Link>
-            <Link href={siteConfig.social.youtube} target="_blank" rel="noopener noreferrer">
-              <Youtube className="h-5 w-5 text-muted-foreground hover:text-foreground" />
             </Link>
           </div>
         </div>

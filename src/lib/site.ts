@@ -15,9 +15,8 @@ export const siteConfig = {
   foundingYear: 2023,
   founders: ["Anand", "Ovi"],
   social: {
-    linkedin: "https://www.linkedin.com/",
-    twitter: "https://twitter.com/",
-    youtube: "https://www.youtube.com/"
+    linkedin: "https://www.linkedin.com/company/aoplusin/",
+    twitter: "https://x.com/aoplusin",
   },
   navLinks: [
     { href: '/', label: 'Home' },
