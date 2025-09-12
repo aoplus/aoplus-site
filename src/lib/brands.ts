@@ -14,7 +14,7 @@ export const brands: Brand[] = [
     id: "prodory",
     name: "Prodory.com",
     domain: "https://prodory.com",
-    shortDesc: "AI, Cloud and DevOps Solution / CNCF magazine & product microsite",
+    shortDesc: "AI, Cloud and Devops Solutions",
     role: "Product Microsite",
     primaryContact: "prodory@aoplus.in",
     linkType: "redirect",
