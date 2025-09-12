@@ -761,52 +761,62 @@ export default function InvestorDeckPage() {
                     <h3>Use of Funds</h3>
                     <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
                         <div>
-                            <h4>Product Development (40%)</h4>
+                            <h4>Product Development (40% - ₹10 Cr)</h4>
                             <ul>
-                                <li>AI/ML capabilities enhancement</li>
-                                <li>Mobile app development</li>
-                                <li>Platform integrations</li>
+                                <li>• AI/ML capabilities enhancement - ₹4 Cr</li>
+                                <li>• Mobile app development - ₹2.5 Cr</li>
+                                <li>• Platform integrations - ₹2 Cr</li>
+                                <li>• Security & compliance - ₹1.5 Cr</li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Market Expansion (35%)</h4>
+                            <h4>Market Expansion (35% - ₹8.75 Cr)</h4>
                             <ul>
-                                <li>Sales & marketing team</li>
-                                <li>Customer acquisition</li>
-                                <li>Geographic expansion</li>
+                                <li>• Sales & marketing team - ₹4 Cr</li>
+                                <li>• Customer acquisition - ₹3 Cr</li>
+                                <li>• Geographic expansion - ₹1.75 Cr</li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Team Building (15%)</h4>
+                            <h4>Team Building (15% - ₹3.75 Cr)</h4>
                             <ul>
-                                <li>Engineering talent</li>
-                                <li>Product managers</li>
-                                <li>Data scientists</li>
+                                <li>• Engineering talent - ₹2 Cr</li>
+                                <li>• Product managers - ₹1 Cr</li>
+                                <li>• Data scientists - ₹0.75 Cr</li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Working Capital (10%)</h4>
+                            <h4>Working Capital (10% - ₹2.5 Cr)</h4>
                             <ul>
-                                <li>Operations</li>
-                                <li>Infrastructure costs</li>
-                                <li>Contingency</li>
+                                <li>• Operations - ₹1.5 Cr</li>
+                                <li>• Infrastructure costs - ₹0.7 Cr</li>
+                                <li>• Contingency - ₹0.3 Cr</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="timeline">
-                    <h3>Key Milestones</h3>
+                    <h3>Investment Milestones</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-date">3 Months</div>
+                        <div class="timeline-content">
+                            <strong>Team Scaling & Product Enhancement</strong><br />
+                            Hire 25+ engineers, launch v2.0 products, establish partnerships
+                        </div>
+                    </div>
                     <div class="timeline-item">
                         <div class="timeline-date">6 Months</div>
-                        <div class="timeline-content">Product launches, initial revenue traction, team expansion</div>
+                        <div class="timeline-content">
+                            <strong>Market Traction & Revenue Growth</strong><br />
+                            ₹10 Cr ARR, 100+ enterprise customers, expand to 3 new cities
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">12 Months</div>
-                        <div class="timeline-content">₹10 Cr ARR, market expansion, Series A+ preparation</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">24 Months</div>
-                        <div class="timeline-content">₹30 Cr ARR, profitability, Series B consideration</div>
+                        <div class="timeline-content">
+                            <strong>Profitability & Series B Readiness</strong><br />
+                             ₹30 Cr ARR, achieve operational profitability, prepare for Series B
+                        </div>
                     </div>
                 </div>
             </div>
@@ -857,12 +867,11 @@ export default function InvestorDeckPage() {
                 const slides = document.querySelectorAll('.slide');
                 
                 if (n > totalSlides) {
-                    n = 1;
+                    currentSlide = 1;
                 }
                 if (n < 1) {
-                    n = totalSlides;
+                    currentSlide = totalSlides;
                 }
-                currentSlide = n;
                 
                 slides.forEach(slide => slide.classList.remove('active'));
                 slides[currentSlide - 1].classList.add('active');
