@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useTransition } from "react";
-import { sendEmail } from "@/ai/flows/send-email-flow";
+import { siteConfig } from "@/lib/site";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -54,10 +54,9 @@ export default function AssessmentPage() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    startTransition(async () => {
-      try {
-        const subject = `New FinOps Assessment Request from ${values.name}`;
-        const body = `
+    startTransition(() => {
+        const subject = encodeURIComponent(`New FinOps Assessment Request from ${values.name}`);
+        const body = encodeURIComponent(`
 Name: ${values.name}
 Company: ${values.company}
 Email: ${values.email}
@@ -65,32 +64,17 @@ Product of Interest: ${values.productInterest}
 
 Infrastructure Details:
 ${values.answers}
-        `;
+        `);
 
-        const result = await sendEmail({
-          from: values.email,
-          subject,
-          text: body,
-        });
-
-        if (result.success) {
-          toast({
-              title: "Request Submitted!",
-              description: "We've received your assessment request and will be in touch soon.",
-          });
-          setIsSuccess(true);
-          form.reset();
-        } else {
-          throw new Error(result.message);
-        }
-      } catch (error) {
-        console.error("Failed to send assessment email:", error);
+        const mailtoLink = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+        
         toast({
-            title: "Something went wrong.",
-            description: "Could not submit your request. Please try again later.",
-            variant: "destructive",
+            title: "Redirecting to your email client...",
+            description: "Please complete sending the email to submit your request.",
         });
-      }
+        setIsSuccess(true);
+        form.reset();
     });
   }
 
@@ -112,7 +96,7 @@ ${values.answers}
                 <Send className="h-8 w-8 text-primary-foreground" />
             </div>
             <h3 className="text-2xl font-bold">Thank You!</h3>
-            <p className="text-muted-foreground">Your assessment request has been submitted.</p>
+            <p className="text-muted-foreground">Your assessment request has been prepared.</p>
             <Button variant="link" onClick={() => setIsSuccess(false)}>Submit another request</Button>
         </div>
       ) : (

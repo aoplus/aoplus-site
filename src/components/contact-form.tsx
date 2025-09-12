@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { sendEmail } from "@/ai/flows/send-email-flow";
+import { siteConfig } from "@/lib/site";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -48,37 +48,20 @@ export function ContactForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    startTransition(async () => {
-        try {
-            const subject = `Contact Form Submission from ${values.name}`;
-            const body = `Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`;
-            
-            const result = await sendEmail({
-              from: values.email,
-              subject,
-              text: body,
-            });
-            
-            if (result.success) {
-                toast({
-                  title: "Message Sent!",
-                  description: "Thanks for reaching out. We'll get back to you shortly.",
-                });
+    startTransition(() => {
+        const subject = encodeURIComponent(`Contact Form Submission from ${values.name}`);
+        const body = encodeURIComponent(`Name: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}`);
         
-                setIsSuccess(true);
-                form.reset();
-            } else {
-              throw new Error(result.message);
-            }
+        const mailtoLink = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
 
-        } catch(error) {
-            console.error("Failed to send contact email:", error);
-            toast({
-                title: "Something went wrong.",
-                description: "Could not send your message. Please try again later.",
-                variant: "destructive",
-            });
-        }
+        toast({
+          title: "Redirecting to your email client...",
+          description: "Please complete sending the email to submit your message.",
+        });
+
+        setIsSuccess(true);
+        form.reset();
     });
   }
 
@@ -89,7 +72,7 @@ export function ContactForm() {
                 <Mail className="h-8 w-8 text-primary-foreground" />
             </div>
             <h3 className="text-2xl font-bold">Thank You!</h3>
-            <p className="text-muted-foreground">Your message has been sent successfully.</p>
+            <p className="text-muted-foreground">Your message has been prepared to be sent.</p>
             <Button variant="link" onClick={() => setIsSuccess(false)}>Send another message</Button>
         </Card>
     )
@@ -154,7 +137,7 @@ export function ContactForm() {
                     <Send className="mr-2 h-4 w-4" />
                 )}
                 Send Message
-                </Button>
+                </button>
             </form>
             </Form>
         </CardContent>
