@@ -856,9 +856,13 @@ export default function InvestorDeckPage() {
             function showSlide(n) {
                 const slides = document.querySelectorAll('.slide');
                 
-                if (n > totalSlides) currentSlide = 1;
-                if (n < 1) currentSlide = totalSlides;
-                else currentSlide = n;
+                if (n > totalSlides) {
+                    n = 1;
+                }
+                if (n < 1) {
+                    n = totalSlides;
+                }
+                currentSlide = n;
                 
                 slides.forEach(slide => slide.classList.remove('active'));
                 slides[currentSlide - 1].classList.add('active');
