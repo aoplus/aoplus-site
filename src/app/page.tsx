@@ -100,21 +100,23 @@ export default function Home() {
                       <Card className="flex h-full flex-col">
                         <CardHeader className="items-center pb-4">
                           {brandLogo && (
-                            <Image
-                              src={brandLogo.imageUrl}
-                              alt={`${brand.name} logo`}
-                              data-ai-hint={brandLogo.imageHint}
-                              width={150}
-                              height={50}
-                              className="mb-4 h-12 object-contain"
-                            />
+                            <div className="mb-4 flex h-16 items-center justify-center">
+                              <Image
+                                src={brandLogo.imageUrl}
+                                alt={`${brand.name} logo`}
+                                data-ai-hint={brandLogo.imageHint}
+                                width={150}
+                                height={64}
+                                className="object-contain"
+                              />
+                            </div>
                           )}
                           <CardTitle className="text-center">
                             {brand.name}
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="flex flex-1 flex-col justify-between">
-                          <CardDescription className="mb-4 text-center">
+                          <CardDescription className="mb-4 flex-grow text-center">
                             {brand.shortDesc}
                           </CardDescription>
                           <Button asChild className="mt-auto w-full">
