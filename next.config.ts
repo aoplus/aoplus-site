@@ -5,8 +5,8 @@ const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.s
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  basePath: repoName ? `/${repoName}` : '',
-  assetPrefix: repoName ? `/${repoName}/` : '',
+  basePath: '/aoplus-site',
+  assetPrefix: '/aoplus-site/',
   typescript: {
     ignoreBuildErrors: true,
   },
