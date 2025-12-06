@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -20,11 +21,7 @@ import { brands } from "@/lib/brands";
 export function Header() {
   const pathname = usePathname();
 
-  const navLinks = [
-    ...siteConfig.navLinks.slice(0, 1),
-    { href: '/audit', label: 'Growth Audit' },
-    ...siteConfig.navLinks.slice(1)
-  ];
+  const navLinks = siteConfig.navLinks;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

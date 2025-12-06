@@ -4,7 +4,8 @@
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CircleCheck, FileText, Bot, Lightbulb, Wrench, Sparkles, BarChart, AlertCircle, RefreshCcw } from "lucide-react";
+import { CircleCheck, FileText, Bot, Lightbulb, Wrench, Sparkles, BarChart, AlertCircle, RefreshCcw, Send } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -35,15 +36,44 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 import { generateBusinessAudit } from "@/ai/flows/audit-flow";
-import { AuditReportInputSchema, type AuditReportInput, type AuditReportOutput } from "@/ai/schemas/audit-schemas";
+import { type AuditReportInput, AuditReportInputSchema, type AuditReportOutput } from "@/ai/schemas/audit-schemas";
+import { starterKits, type StarterKit } from "@/lib/starter-kits";
+import { siteConfig } from "@/lib/site";
 
-function AuditReport({ report, clientName, onReset }: { report: AuditReportOutput, clientName: string, onReset: () => void }) {
+
+function AuditReport({ report, clientName, onReset, fullInput }: { report: AuditReportOutput, clientName: string, onReset: () => void, fullInput: AuditReportInput }) {
   const categories = [
     { title: "Key Observations", icon: Lightbulb, data: report.keyObservations },
     { title: "Automation Opportunities", icon: Sparkles, data: report.automationOpportunities },
     { title: "Digital Improvements", icon: BarChart, data: report.digitalImprovements },
     { title: "Cost Savings", icon: Wrench, data: report.costSavings },
   ];
+
+  const recommendedKits: StarterKit[] = starterKits.filter(kit => 
+    report.recommendedSolutions.some(rec => rec.solution.includes(kit.name))
+  );
+  
+  const handleLetsTalkClick = () => {
+    const subject = encodeURIComponent(`AI Audit Lead: ${fullInput.businessName}`);
+    
+    let body = `A new business growth audit has been completed.\n\n`;
+    body += `================================\n`;
+    body += `CLIENT SUBMITTED DETAILS\n`;
+    body += `================================\n\n`;
+    body += Object.entries(fullInput).map(([key, value]) => `${key}: ${value}`).join('\n');
+    body += `\n\n================================\n`;
+    body += `AI GENERATED AUDIT REPORT\n`;
+    body += `================================\n\n`;
+    body += `Key Observations:\n- ${report.keyObservations.join('\n- ')}\n\n`;
+    body += `Automation Opportunities:\n- ${report.automationOpportunities.join('\n- ')}\n\n`;
+    body += `Digital Improvements:\n- ${report.digitalImprovements.join('\n- ')}\n\n`;
+    body += `Cost Savings:\n- ${report.costSavings.join('\n- ')}\n\n`;
+    body += `Recommended AO+ Solutions:\n`;
+    body += report.recommendedSolutions.map(rec => `- ${rec.problem}: ${rec.solution} (${rec.reason})`).join('\n');
+
+    const mailtoLink = `mailto:${siteConfig.email}?subject=${subject}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  }
 
   return (
     <Card className="border-primary/50">
@@ -60,19 +90,19 @@ function AuditReport({ report, clientName, onReset }: { report: AuditReportOutpu
         <div className="rounded-lg bg-primary/5 p-6">
             <h3 className="mb-4 flex items-center text-xl font-bold text-primary">
                 <CircleCheck className="mr-3 h-6 w-6" />
-                Recommended Next Steps with AO+ Solutions
+                Recommended AO+ Solutions
             </h3>
             <div className="space-y-4">
                 {report.recommendedSolutions.map((rec, index) => (
                     <div key={index} className="rounded-md border border-primary/20 bg-background p-4">
                         <p className="font-semibold">{rec.problem}</p>
-                        <p className="text-muted-foreground">{rec.solution}: <span className="italic">{rec.reason}</span></p>
+                        <p className="text-muted-foreground"><span className="font-bold text-primary">{rec.solution}</span>: <span className="italic">{rec.reason}</span></p>
                     </div>
                 ))}
             </div>
         </div>
         
-        <Accordion type="multiple" defaultValue={["Key Observations", "Automation Opportunities"]} className="w-full">
+        <Accordion type="multiple" defaultValue={["Key Observations"]} className="w-full">
           {categories.map((category) => (
             <AccordionItem value={category.title} key={category.title}>
               <AccordionTrigger className="text-lg font-semibold">
@@ -92,11 +122,34 @@ function AuditReport({ report, clientName, onReset }: { report: AuditReportOutpu
           ))}
         </Accordion>
 
-        <div className="pt-6 text-center">
-          <p className="mb-4 text-muted-foreground">Ready to take the next step? Let's talk.</p>
-          <Button onClick={onReset} size="lg">
-            <RefreshCcw className="mr-2" /> Start New Audit
-          </Button>
+        <Separator />
+        
+        <div className="text-center">
+            <h3 className="font-headline text-2xl font-bold">Ready to take the next step?</h3>
+            <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
+                Our AI has identified key areas for growth. Let's discuss how AO+ Solutions can help you implement these changes and grow your business.
+            </p>
+            {recommendedKits.length > 0 && (
+                <div className="mt-6">
+                    <p className="text-sm text-muted-foreground">The following starter kits might be a great fit for you:</p>
+                    <div className="mt-4 flex flex-wrap justify-center gap-4">
+                        {recommendedKits.map(kit => (
+                            <Button asChild variant="outline" key={kit.id}>
+                                <Link href={`/starter-kits#${kit.id}`}>{kit.name}</Link>
+                            </Button>
+                        ))}
+                    </div>
+                </div>
+            )}
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                 <Button onClick={handleLetsTalkClick} size="lg">
+                    <Send className="mr-2" /> Let's Talk & Get This Report
+                 </Button>
+                 <Button onClick={onReset} size="lg" variant="ghost">
+                    <RefreshCcw className="mr-2" /> Start New Audit
+                </Button>
+            </div>
+            <p className="mt-4 text-xs text-muted-foreground">Clicking "Let's Talk" will open a pre-filled email to send us your report and start a conversation.</p>
         </div>
       </CardContent>
     </Card>
@@ -106,6 +159,7 @@ function AuditReport({ report, clientName, onReset }: { report: AuditReportOutpu
 export default function AuditPage() {
   const [isPending, startTransition] = useTransition();
   const [report, setReport] = useState<AuditReportOutput | null>(null);
+  const [fullInput, setFullInput] = useState<AuditReportInput | null>(null);
   const [clientName, setClientName] = useState("");
   const [error, setError] = useState<string | null>(null);
 
@@ -142,6 +196,7 @@ export default function AuditPage() {
     setError(null);
     setReport(null);
     setClientName(values.ownerName);
+    setFullInput(values);
     startTransition(async () => {
       try {
         const result = await generateBusinessAudit(values);
@@ -157,6 +212,7 @@ export default function AuditPage() {
     setReport(null);
     setError(null);
     setClientName("");
+    setFullInput(null);
     form.reset();
   }
 
@@ -192,7 +248,7 @@ export default function AuditPage() {
         </Alert>
       )}
 
-      {report && <AuditReport report={report} clientName={clientName} onReset={handleReset} />}
+      {report && fullInput && <AuditReport report={report} clientName={clientName} onReset={handleReset} fullInput={fullInput} />}
 
       {!report && !isPending && (
         <Card>
