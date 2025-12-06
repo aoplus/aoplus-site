@@ -1,3 +1,4 @@
+
 export type NavLink = {
   href: string;
   label: string;
@@ -20,14 +21,15 @@ export const siteConfig = {
   },
   navLinks: [
     { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
+    { href: '/audit', label: 'Growth Audit' },
     { href: '/brand-network', label: 'Brand Network' },
     { href: '/careers', label: 'Careers' },
     { href: '/investors', label: 'Investors' },
-    { href: '/contact', label: 'Contact' },
   ] as NavLink[],
   footerLinks: [
      { href: '/about', label: 'About Us' },
-     { href: '/contact', label: 'Contact' },
+     { href: '/services', label: 'Services' },
      { href: '/careers', label: 'Careers' },
      { href: '/investors', label: 'Investors' },
   ] as NavLink[],
