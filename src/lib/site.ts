@@ -22,7 +22,6 @@ export const siteConfig = {
   navLinks: [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
-    { href: '/audit', label: 'Growth Audit' },
     { href: '/brand-network', label: 'Brand Network' },
     { href: '/careers', label: 'Careers' },
     { href: '/investors', label: 'Investors' },
