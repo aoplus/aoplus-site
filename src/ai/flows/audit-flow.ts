@@ -11,29 +11,29 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 
 export const AuditReportInputSchema = z.object({
-  businessName: z.string().describe('The name of the business.'),
-  ownerName: z.string().describe('The name of the business owner.'),
-  businessType: z.string().describe('The type of business (e.g., retail, service).'),
-  location: z.string().describe('The physical location or primary market of the business.'),
-  contactMethod: z.string().describe('How customers usually contact the business.'),
-  replyTime: z.string().describe('How quickly the business replies to customers.'),
-  trackFollowUps: z.string().describe('Whether the business tracks follow-ups.'),
-  leadsPerWeek: z.string().describe('The number of leads handled per week.'),
-  loseCustomers: z.string().describe('Whether customers are lost due to late responses.'),
-  dailyTasks: z.string().describe('Tasks that consume daily time.'),
-  manualReminders: z.string().describe('Whether reminders are sent manually.'),
-  manualPayments: z.string().describe('Whether payments are tracked manually.'),
-  manualMessages: z.string().describe('Whether customer messages are written manually.'),
-  hasWebsite: z.string().describe('Whether the business has a website.'),
-  hasGMB: z.string().describe('Whether the business has a Google Business Profile.'),
-  getReviews: z.string().describe('Whether the business regularly gets reviews.'),
-  searchVisible: z.string().describe('Whether the business is visible on search.'),
-  paidSoftware: z.string().describe('A list of software/IT tools the business pays for.'),
-  unusedSubs: z.string().describe('Whether there are unused subscriptions.'),
-  cloudServices: z.string().describe('Whether the business pays for cloud services.'),
-  biggestChallenge: z.string().describe('The biggest business challenge today.'),
-  fixFirst: z.string().describe('What the business owner wants to fix first.'),
-  wantsPlan: z.string().describe('Whether the owner would like a free automation plan.'),
+  businessName: z.string().min(1, "Business name is required."),
+  ownerName: z.string().min(1, "Owner name is required."),
+  businessType: z.string().min(1, "Business type is required."),
+  location: z.string().min(1, "Location is required."),
+  contactMethod: z.string().min(1, "Contact method is required."),
+  replyTime: z.string(),
+  trackFollowUps: z.string(),
+  leadsPerWeek: z.string().min(1, "Leads per week is required."),
+  loseCustomers: z.string(),
+  dailyTasks: z.string().min(1, "Daily tasks are required."),
+  manualReminders: z.string(),
+  manualPayments: z.string(),
+  manualMessages: z.string(),
+  hasWebsite: z.string(),
+  hasGMB: z.string(),
+  getReviews: z.string(),
+  searchVisible: z.string(),
+  paidSoftware: z.string(),
+  unusedSubs: z.string(),
+  cloudServices: z.string(),
+  biggestChallenge: z.string().min(1, "Biggest challenge is required."),
+  fixFirst: z.string().min(1, "What to fix first is required."),
+  wantsPlan: z.string(),
 });
 
 export type AuditReportInput = z.infer<typeof AuditReportInputSchema>;
@@ -98,3 +98,5 @@ const auditFlow = ai.defineFlow(
     return output!;
   }
 );
+
+    
