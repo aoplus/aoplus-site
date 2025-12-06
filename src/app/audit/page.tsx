@@ -172,7 +172,7 @@ export default function AuditPage() {
                  <div className="space-y-6">
                     <FormField control={form.control} name="biggestChallenge" render={({ field }) => ( <FormItem><FormLabel>What is your biggest business challenge today?</FormLabel><FormControl><Textarea {...field} /></FormControl><FormMessage /></FormItem> )} />
                     <FormField control={form.control} name="fixFirst" render={({ field }) => ( <FormItem><FormLabel>What do you want to fix first?</FormLabel><FormControl><Textarea {...field} /></FormControl><FormMessage /></FormItem> )} />
-                    <FormField control={form>control} name="wantsPlan" render={({ field }) => ( <FormItem><FormLabel>Would you like a free automation plan?</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue /></SelectValue></FormControl><SelectContent><SelectItem value="Yes">Yes</SelectItem><SelectItem value="No">No</SelectItem></SelectContent></Select><FormMessage /></FormItem> )} />
+                    <FormField control={form.control} name="wantsPlan" render={({ field }) => ( <FormItem><FormLabel>Would you like a free automation plan?</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue /></SelectTrigger></FormControl><SelectContent><SelectItem value="Yes">Yes</SelectItem><SelectItem value="No">No</SelectItem></SelectContent></Select><FormMessage /></FormItem> )} />
                 </div>
 
                 <Button type="submit" disabled={isPending} className="w-full" size="lg">
@@ -186,5 +186,3 @@ export default function AuditPage() {
     </div>
   );
 }
-
-    
