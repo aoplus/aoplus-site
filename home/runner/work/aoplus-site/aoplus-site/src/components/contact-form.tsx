@@ -76,7 +76,7 @@ export function ContactForm() {
             <p className="text-muted-foreground">Your message has been prepared to be sent.</p>
             <Button variant="link" onClick={() => setIsSuccess(false)}>Send another message</Button>
         </Card>
-    )
+    );
   }
 
   return (
