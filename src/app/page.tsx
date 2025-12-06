@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -26,6 +27,8 @@ import {
 import { brands } from '@/lib/brands';
 import { siteConfig } from '@/lib/site';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { QuickStarterCard } from '@/components/quick-starter-card';
+import { starterKits } from '@/lib/starter-kits';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'aoplus-hero');
@@ -64,6 +67,26 @@ export default function Home() {
               />
             )}
           </div>
+        </div>
+      </section>
+
+      {/* Quick Starter Kits Section */}
+      <section id="quick-starter-kits" className="w-full bg-background py-16 md:py-24">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+            Quick Starter Kits for MSMEs
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Fast, affordable packages to get your digital foundation in place — websites, audits and CRM, delivered with predictable timelines.
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            These kits are designed to be fast, low-friction entry points. We often waive or discount parts of these for long-term MSME partners — talk to us to see what’s possible for your business.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {starterKits.map((kit) => (
+            <QuickStarterCard key={kit.id} kit={kit} />
+          ))}
         </div>
       </section>
 
