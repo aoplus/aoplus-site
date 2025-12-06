@@ -37,7 +37,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 import { generateBusinessAudit } from "@/ai/flows/audit-flow";
 import { type AuditReportInput, AuditReportInputSchema, type AuditReportOutput } from "@/ai/schemas/audit-schemas";
-import { starterKits, type StarterKit } from "@/lib/starter-kits";
+import { serviceBundles, type Bundle } from "@/lib/services";
 import { siteConfig } from "@/lib/site";
 
 
@@ -49,8 +49,8 @@ function AuditReport({ report, clientName, onReset, fullInput }: { report: Audit
     { title: "Cost Savings", icon: Wrench, data: report.costSavings },
   ];
 
-  const recommendedKits: StarterKit[] = starterKits.filter(kit => 
-    report.recommendedSolutions.some(rec => rec.solution.includes(kit.name))
+  const recommendedKits: Bundle[] = serviceBundles.filter(kit => 
+    report.recommendedSolutions.some(rec => rec.solution.includes(kit.title))
   );
   
   const handleLetsTalkClick = () => {
@@ -131,11 +131,11 @@ function AuditReport({ report, clientName, onReset, fullInput }: { report: Audit
             </p>
             {recommendedKits.length > 0 && (
                 <div className="mt-6">
-                    <p className="text-sm text-muted-foreground">The following starter kits might be a great fit for you:</p>
+                    <p className="text-sm text-muted-foreground">The following service bundles might be a great fit for you:</p>
                     <div className="mt-4 flex flex-wrap justify-center gap-4">
                         {recommendedKits.map(kit => (
                             <Button asChild variant="outline" key={kit.id}>
-                                <Link href={`/starter-kits#${kit.id}`}>{kit.name}</Link>
+                                <Link href={`/services#${kit.id}`}>{kit.title}</Link>
                             </Button>
                         ))}
                     </div>
@@ -330,3 +330,5 @@ export default function AuditPage() {
     </div>
   );
 }
+
+    

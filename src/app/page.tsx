@@ -4,6 +4,8 @@ import Link from 'next/link';
 import {
   ArrowRight,
   BarChart,
+  Bot,
+  Briefcase,
   DollarSign,
   Target,
   TrendingUp,
@@ -27,8 +29,8 @@ import {
 import { brands } from '@/lib/brands';
 import { siteConfig } from '@/lib/site';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { QuickStarterCard } from '@/components/quick-starter-card';
-import { starterKits } from '@/lib/starter-kits';
+import { serviceBundles } from '@/lib/services';
+import { Badge } from '@/components/ui/badge';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'aoplus-hero');
@@ -46,12 +48,13 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg">
-                <Link href="/assessment">
-                  Book Free FinOps Assessment <ArrowRight className="ml-2" />
+                <Link href="/audit">
+                  <Bot className="mr-2" />
+                  Take Free Growth Audit
                 </Link>
               </Button>
               <Button asChild size="lg" variant="secondary">
-                <Link href="/brand-network">Explore Brands</Link>
+                <Link href="/services">Explore Services</Link>
               </Button>
             </div>
           </div>
@@ -70,23 +73,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Starter Kits Section */}
-      <section id="quick-starter-kits" className="w-full bg-background py-16 md:py-24">
+      {/* Service Bundles Section */}
+      <section id="services" className="w-full bg-background py-16 md:py-24">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            Quick Starter Kits for MSMEs
+            Solutions for Every Stage of Your Business
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Fast, affordable packages to get your digital foundation in place — websites, audits and CRM, delivered with predictable timelines.
-          </p>
-          <p className="mt-4 text-sm text-muted-foreground">
-            These kits are designed to be fast, low-friction entry points. We often waive or discount parts of these for long-term MSME partners — talk to us to see what’s possible for your business.
+            From foundational IT and digital presence to advanced automation and growth marketing, we have a solution that fits.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {starterKits.map((kit) => (
-            <QuickStarterCard key={kit.id} kit={kit} />
+          {serviceBundles.slice(0,3).map((bundle) => (
+             <Card key={bundle.id} className="flex flex-col">
+                <CardHeader>
+                    <Badge variant="outline" className='w-fit'>{bundle.targetAudience}</Badge>
+                    <CardTitle className="pt-4">{bundle.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-1">
+                    <CardDescription>
+                        {bundle.description}
+                    </CardDescription>
+                </CardContent>
+                <CardFooter>
+                    <Button asChild variant="secondary" className="w-full">
+                        <Link href={`/services#${bundle.id}`}>
+                            Learn More <ArrowRight className="ml-2" />
+                        </Link>
+                    </Button>
+                </CardFooter>
+             </Card>
           ))}
+        </div>
+        <div className="mt-12 text-center">
+            <Button asChild variant="link">
+                <Link href="/services">View All Services & Bundles <ArrowRight className="ml-2" /></Link>
+            </Button>
         </div>
       </section>
 

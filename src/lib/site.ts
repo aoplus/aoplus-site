@@ -21,7 +21,7 @@ export const siteConfig = {
   },
   navLinks: [
     { href: '/', label: 'Home' },
-    { href: '/starter-kits', label: 'Starter Kits' },
+    { href: '/services', label: 'Services' },
     { href: '/audit', label: 'Growth Audit' },
     { href: '/brand-network', label: 'Brand Network' },
     { href: '/careers', label: 'Careers' },
@@ -29,7 +29,7 @@ export const siteConfig = {
   ] as NavLink[],
   footerLinks: [
      { href: '/about', label: 'About Us' },
-     { href: '/starter-kits', label: 'Starter Kits' },
+     { href: '/services', label: 'Services' },
      { href: '/contact', label: 'Contact' },
      { href: '/careers', label: 'Careers' },
      { href: '/investors', label: 'Investors' },
