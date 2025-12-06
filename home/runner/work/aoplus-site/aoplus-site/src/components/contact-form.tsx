@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useTransition } from "react";
@@ -137,7 +138,7 @@ export function ContactForm() {
                     <Send className="mr-2 h-4 w-4" />
                 )}
                 Send Message
-                </Button>
+                </button>
             </form>
             </Form>
         </CardContent>
