@@ -7,7 +7,7 @@ export type StarterKit = {
   delivery: string;
   features: string[];
   target: string;
-  upsellPath?: string;
+  growthPath?: string;
   cta: string;
 };
 
@@ -43,7 +43,7 @@ export const starterKits: StarterKit[] = [
     ],
     target:
       'Ideal for existing businesses that already have a website but aren’t sure if it’s working for them.',
-    upsellPath: 'Recommended next steps: Website redesign (from ₹9,999) or Monthly SEO (from ₹7,999/month).',
+    growthPath: 'Recommended next steps: Website redesign (from ₹9,999) or Monthly SEO (from ₹7,999/month).',
     cta: 'Get My Audit',
   },
   {
@@ -61,7 +61,7 @@ export const starterKits: StarterKit[] = [
     ],
     target:
       'Perfect for small teams currently managing leads in spreadsheets or WhatsApp.',
-    upsellPath: 'Scale later with additional users (₹999/user/month) and automation workflows (from ₹4,999).',
+    growthPath: 'Scale later with additional users (₹999/user/month) and automation workflows (from ₹4,999).',
     cta: 'Start CRM QuickStart',
   },
 ];

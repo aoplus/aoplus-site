@@ -65,12 +65,12 @@ export default function StarterKitsPage() {
                             </li>
                         ))}
                         </ul>
-                        {kit.upsellPath && (
+                        {kit.growthPath && (
                             <>
                                 <Separator className="my-6" />
                                 <div>
-                                    <h4 className="mb-2 font-semibold">Potential Upsell Path</h4>
-                                    <p className="text-sm text-muted-foreground">{kit.upsellPath}</p>
+                                    <h4 className="mb-2 font-semibold">Potential Growth Path</h4>
+                                    <p className="text-sm text-muted-foreground">{kit.growthPath}</p>
                                 </div>
                             </>
                         )}

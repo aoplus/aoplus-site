@@ -41,14 +41,14 @@ export function QuickStarterCard({ kit }: QuickStarterCardProps) {
           ))}
         </ul>
         <p className="mt-6 text-xs text-muted-foreground">{kit.target}</p>
-        {kit.upsellPath && (
+        {kit.growthPath && (
             <>
                 <Separator className="my-4" />
                  <div className="flex items-start gap-3 text-xs text-muted-foreground">
                     <Info className="h-4 w-4 flex-shrink-0 text-primary" />
                     <div>
-                        <p className="font-semibold">Upsell Path</p>
-                        <p>{kit.upsellPath}</p>
+                        <p className="font-semibold">Growth Path</p>
+                        <p>{kit.growthPath}</p>
                     </div>
                 </div>
             </>
