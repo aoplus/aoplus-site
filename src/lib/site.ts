@@ -30,7 +30,6 @@ export const siteConfig = {
   footerLinks: [
      { href: '/about', label: 'About Us' },
      { href: '/services', label: 'Services' },
-     { href: '/contact', label: 'Contact' },
      { href: '/careers', label: 'Careers' },
      { href: '/investors', label: 'Investors' },
   ] as NavLink[],
