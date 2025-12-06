@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -234,26 +235,4 @@ export default function Home() {
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">
                   Roadmap Focus
-                </CardTitle>
-                <Target className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">AI & Cloud</div>
-                <p className="text-xs text-muted-foreground">
-                  Deepening capabilities
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="mt-12 text-center">
-            <Button asChild variant="link">
-              <Link href="/investors">
-                View Investor Details <ArrowRight className="ml-2" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
+                </T
