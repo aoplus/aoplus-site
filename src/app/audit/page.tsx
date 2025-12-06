@@ -4,9 +4,7 @@
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { Send } from "lucide-react";
+import { CircleCheck, FileText, Bot, Lightbulb, Wrench, Sparkles, BarChart, AlertCircle, RefreshCcw } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -28,13 +26,88 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { siteConfig } from "@/lib/site";
-import { AuditReportInputSchema, type AuditReportInput } from "@/ai/schemas/audit-schemas";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+
+import { generateBusinessAudit } from "@/ai/flows/audit-flow";
+import { AuditReportInputSchema, type AuditReportInput, type AuditReportOutput } from "@/ai/schemas/audit-schemas";
+
+function AuditReport({ report, clientName, onReset }: { report: AuditReportOutput, clientName: string, onReset: () => void }) {
+  const categories = [
+    { title: "Key Observations", icon: Lightbulb, data: report.keyObservations },
+    { title: "Automation Opportunities", icon: Sparkles, data: report.automationOpportunities },
+    { title: "Digital Improvements", icon: BarChart, data: report.digitalImprovements },
+    { title: "Cost Savings", icon: Wrench, data: report.costSavings },
+  ];
+
+  return (
+    <Card className="border-primary/50">
+      <CardHeader className="text-center">
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+          <FileText className="h-8 w-8 text-primary" />
+        </div>
+        <CardTitle className="text-3xl font-bold">Business Growth Audit Report</CardTitle>
+        <CardDescription className="text-lg">Prepared for: {clientName}</CardDescription>
+        <p className="text-sm text-muted-foreground">{new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+      </CardHeader>
+      <CardContent className="space-y-8 p-6 md:p-8">
+        
+        <div className="rounded-lg bg-primary/5 p-6">
+            <h3 className="mb-4 flex items-center text-xl font-bold text-primary">
+                <CircleCheck className="mr-3 h-6 w-6" />
+                Recommended Next Steps with AO+ Solutions
+            </h3>
+            <div className="space-y-4">
+                {report.recommendedSolutions.map((rec, index) => (
+                    <div key={index} className="rounded-md border border-primary/20 bg-background p-4">
+                        <p className="font-semibold">{rec.problem}</p>
+                        <p className="text-muted-foreground">{rec.solution}: <span className="italic">{rec.reason}</span></p>
+                    </div>
+                ))}
+            </div>
+        </div>
+        
+        <Accordion type="multiple" defaultValue={["Key Observations", "Automation Opportunities"]} className="w-full">
+          {categories.map((category) => (
+            <AccordionItem value={category.title} key={category.title}>
+              <AccordionTrigger className="text-lg font-semibold">
+                <div className="flex items-center">
+                  <category.icon className="mr-3 h-5 w-5 text-primary" />
+                  {category.title}
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
+                  {category.data.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+
+        <div className="pt-6 text-center">
+          <p className="mb-4 text-muted-foreground">Ready to take the next step? Let's talk.</p>
+          <Button onClick={onReset} size="lg">
+            <RefreshCcw className="mr-2" /> Start New Audit
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function AuditPage() {
   const [isPending, startTransition] = useTransition();
-  const [isSuccess, setIsSuccess] = useState(false);
-  const { toast } = useToast();
+  const [report, setReport] = useState<AuditReportOutput | null>(null);
+  const [clientName, setClientName] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<AuditReportInput>({
     resolver: zodResolver(AuditReportInputSchema),
@@ -66,47 +139,62 @@ export default function AuditPage() {
   });
 
   function onSubmit(values: AuditReportInput) {
-    startTransition(() => {
-      const subject = encodeURIComponent(`Business Growth Audit for ${values.businessName}`);
-      const body = encodeURIComponent(Object.entries(values)
-        .map(([key, value]) => `${key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase())}: ${value}`)
-        .join("\n"));
-      
-      const mailtoLink = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
-      window.location.href = mailtoLink;
-
-      toast({
-        title: "Redirecting to your email client...",
-        description: "Please complete sending the email to submit your audit request.",
-      });
-
-      setIsSuccess(true);
-      form.reset();
+    setError(null);
+    setReport(null);
+    setClientName(values.ownerName);
+    startTransition(async () => {
+      try {
+        const result = await generateBusinessAudit(values);
+        setReport(result);
+      } catch (e) {
+        console.error(e);
+        setError("An error occurred while generating the report. Please try again.");
+      }
     });
+  }
+
+  const handleReset = () => {
+    setReport(null);
+    setError(null);
+    setClientName("");
+    form.reset();
   }
 
   return (
     <div className="mx-auto max-w-4xl py-16 md:py-24">
-      <div className="mb-12 text-center">
-        <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
-          Business Growth Audit
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Answer a few questions about your business to get a free,
-          personalized plan from our experts.
-        </p>
-      </div>
-
-      {isSuccess ? (
-        <div className="flex h-full flex-col items-center justify-center rounded-lg bg-secondary/50 p-8 text-center">
-            <div className="mb-4 rounded-full bg-primary p-3">
-                <Send className="h-8 w-8 text-primary-foreground" />
-            </div>
-            <h3 className="text-2xl font-bold">Thank You!</h3>
-            <p className="text-muted-foreground">Your audit request has been prepared to be sent.</p>
-            <Button variant="link" onClick={() => setIsSuccess(false)}>Submit another request</Button>
+      {!report && !isPending && (
+        <div className="mb-12 text-center">
+          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">
+            Business Growth Audit
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Answer a few questions about your business to get a free,
+            AI-powered, personalized growth plan from our experts.
+          </p>
         </div>
-      ) : (
+      )}
+
+      {isPending && (
+         <div className="flex flex-col items-center justify-center rounded-lg bg-secondary/50 p-12 text-center">
+            <Bot className="h-16 w-16 animate-pulse text-primary" />
+            <h3 className="mt-6 text-2xl font-bold">Generating Your Report...</h3>
+            <p className="text-muted-foreground">Our AI is analyzing your business. Please wait a moment.</p>
+        </div>
+      )}
+
+      {error && (
+         <Alert variant="destructive">
+          <AlertCircle className="h-4 w-4" />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>
+            {error} <Button variant="link" onClick={handleReset}>Try again</Button>
+          </AlertDescription>
+        </Alert>
+      )}
+
+      {report && <AuditReport report={report} clientName={clientName} onReset={handleReset} />}
+
+      {!report && !isPending && (
         <Card>
           <CardHeader>
             <CardTitle>Your Business Details</CardTitle>
@@ -117,8 +205,8 @@ export default function AuditPage() {
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <h3 className="font-headline text-xl font-semibold">Basic Details</h3>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    <FormField control={form.control} name="businessName" render={({ field }) => ( <FormItem><FormLabel>Business Name</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem> )} />
-                    <FormField control={form.control} name="ownerName" render={({ field }) => ( <FormItem><FormLabel>Owner Name</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem> )} />
+                    <FormField control={form.control} name="businessName" render={({ field }) => ( <FormItem><FormLabel>Business Name</FormLabel><FormControl><Input placeholder="e.g., Anand's Cafe" {...field} /></FormControl><FormMessage /></FormItem> )} />
+                    <FormField control={form.control} name="ownerName" render={({ field }) => ( <FormItem><FormLabel>Your Name</FormLabel><FormControl><Input placeholder="e.g., Anand Kumar" {...field} /></FormControl><FormMessage /></FormItem> )} />
                     <FormField control={form.control} name="businessType" render={({ field }) => ( <FormItem><FormLabel>Type of Business</FormLabel><FormControl><Input placeholder="e.g., Cafe, Salon, IT Services" {...field} /></FormControl><FormMessage /></FormItem> )} />
                     <FormField control={form.control} name="location" render={({ field }) => ( <FormItem><FormLabel>Location</FormLabel><FormControl><Input placeholder="e.g., Mumbai, Online" {...field} /></FormControl><FormMessage /></FormItem> )} />
                 </div>
@@ -176,7 +264,7 @@ export default function AuditPage() {
                 </div>
 
                 <Button type="submit" disabled={isPending} className="w-full" size="lg">
-                  {isPending ? (<><Loader2 className="mr-2" />Submitting...</>) : "Get My Free Plan"}
+                  {isPending ? (<>Generating Report...</>) : "Get My Free AI-Powered Plan"}
                 </Button>
               </form>
             </Form>
