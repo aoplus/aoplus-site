@@ -2,9 +2,10 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+import { ContactForm } from "@/components/contact-form";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { siteConfig } from "@/lib/site";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Contact Us | AO+ Solutions",
@@ -27,60 +28,63 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="mx-auto max-w-2xl">
-        <Card className="bg-secondary/50 p-8">
-            <CardHeader className="p-0 mb-6">
-                <CardTitle className="text-2xl font-bold">Contact Information</CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
-                <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                    <div className="mt-1 flex-shrink-0">
-                        <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                        <h3 className="font-semibold">Email</h3>
-                        <p className="text-muted-foreground">
-                        General Inquiries:{" "}
-                        <a href={`mailto:${siteConfig.email}`} className="text-primary hover:underline">
-                            {siteConfig.email}
-                        </a>
-                        </p>
-                    </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                    <div className="mt-1 flex-shrink-0">
-                        <Phone className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                        <h3 className="font-semibold">Phone</h3>
-                        <p className="text-muted-foreground">{siteConfig.phone}</p>
-                    </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                    <div className="mt-1 flex-shrink-0">
-                        <MapPin className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                        <h3 className="font-semibold">Address</h3>
-                        <p className="text-muted-foreground">{siteConfig.address}</p>
-                    </div>
-                    </div>
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>Contact Information</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="mt-1 flex-shrink-0">
+                  <Mail className="h-6 w-6 text-primary" />
                 </div>
-                {contactImage && (
-                    <div className="mt-8 flex justify-center">
-                        <Image
-                            src={contactImage.imageUrl}
-                            alt={contactImage.description}
-                            data-ai-hint={contactImage.imageHint}
-                            width={400}
-                            height={240}
-                            className="rounded-lg"
-                        />
-                    </div>
-                )}
-            </CardContent>
+                <div>
+                  <h3 className="font-semibold">Email</h3>
+                  <p className="text-muted-foreground">
+                    General Inquiries:{" "}
+                    <a href={`mailto:${siteConfig.email}`} className="text-primary hover:underline">
+                      {siteConfig.email}
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="mt-1 flex-shrink-0">
+                  <Phone className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Phone</h3>
+                  <p className="text-muted-foreground">{siteConfig.phone}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="mt-1 flex-shrink-0">
+                  <MapPin className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Address</h3>
+                  <p className="text-muted-foreground">{siteConfig.address}</p>
+                </div>
+              </div>
+            </div>
+            {contactImage && (
+              <div className="mt-8 flex justify-center">
+                  <Image
+                      src={contactImage.imageUrl}
+                      alt={contactImage.description}
+                      data-ai-hint={contactImage.imageHint}
+                      width={400}
+                      height={240}
+                      className="rounded-lg"
+                  />
+              </div>
+            )}
+          </CardContent>
         </Card>
+        <div>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );

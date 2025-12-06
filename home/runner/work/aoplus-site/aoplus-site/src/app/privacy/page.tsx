@@ -1,16 +1,19 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState, useEffect } from 'react';
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-    title: "Privacy Policy | AO+ Solutions",
-    description: "Privacy Policy for AO+ Solutions and its network of brands.",
-};
-
 export default function PrivacyPolicyPage() {
+    const [lastUpdated, setLastUpdated] = useState('');
+
+    useEffect(() => {
+        setLastUpdated(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    }, []);
+
     return (
         <div className="max-w-4xl mx-auto py-16 md:py-24">
             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">Privacy Policy</h1>
-            <p className="mt-4 text-lg text-muted-foreground">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            <p className="mt-4 text-lg text-muted-foreground">Last updated: {lastUpdated}</p>
 
             <div className="prose prose-lg mt-8 max-w-none dark:prose-invert">
                 <p>AO+ Solutions Pvt Ltd ("us", "we", or "our") operates the AO+ Solutions website and various associated brands (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>

@@ -1,16 +1,19 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState, useEffect } from 'react';
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-    title: "Terms of Service | AO+ Solutions",
-    description: "Terms of Service for AO+ Solutions and its network of brands.",
-};
-
 export default function TermsOfServicePage() {
+    const [lastUpdated, setLastUpdated] = useState('');
+
+    useEffect(() => {
+        setLastUpdated(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    }, []);
+
     return (
         <div className="max-w-4xl mx-auto py-16 md:py-24">
             <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">Terms of Service</h1>
-            <p className="mt-4 text-lg text-muted-foreground">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            <p className="mt-4 text-lg text-muted-foreground">Last updated: {lastUpdated}</p>
 
             <div className="prose prose-lg mt-8 max-w-none dark:prose-invert">
                 <p>Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the AO+ Solutions website and its associated services (the "Service") operated by AO+ Solutions Pvt Ltd ("us", "we", or "our").</p>

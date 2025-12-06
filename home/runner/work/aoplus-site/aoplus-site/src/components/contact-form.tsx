@@ -137,7 +137,7 @@ export function ContactForm() {
                     <Send className="mr-2 h-4 w-4" />
                 )}
                 Send Message
-                </button>
+                </Button>
             </form>
             </Form>
         </CardContent>
