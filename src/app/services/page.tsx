@@ -96,8 +96,8 @@ export default function ServicesPage() {
                     {bundle.pricing.monthly && <div className="flex justify-between font-bold"><p>Subscription:</p> <p>{bundle.pricing.monthly}</p></div>}
                 </div>
               <Button asChild className="w-full">
-                <Link href="/assessment">
-                  Discuss This Bundle <ArrowRight className="ml-2" />
+                <Link href="https://forms.gle/F17TvhBy31N1ij956" target="_blank" rel="noopener noreferrer">
+                  Inquire About Bundle <ArrowRight className="ml-2" />
                 </Link>
               </Button>
             </CardFooter>
