@@ -2,7 +2,7 @@
 export type StarterKit = {
   id: string;
   name: string;
-  price: string;
+  price: number;
   delivery: string;
   label: string;
   target: string;
@@ -15,7 +15,7 @@ export const starterKits: StarterKit[] = [
   {
     id: 'basic-website',
     name: 'Basic Website Kit',
-    price: '₹9,999',
+    price: 9999,
     delivery: 'In 3 Days',
     label: 'Launch Fast',
     target: 'Perfect for individuals and small businesses needing a simple, professional online presence.',
@@ -32,7 +32,7 @@ export const starterKits: StarterKit[] = [
   {
     id: 'gmb-expert',
     name: 'Google Business Pro',
-    price: '₹4,999',
+    price: 4999,
     delivery: 'In 2 Days',
     label: 'Local SEO',
     target: 'Ideal for local shops, restaurants, and service providers who want to rank higher on Google Maps.',
@@ -49,7 +49,7 @@ export const starterKits: StarterKit[] = [
   {
     id: 'erp-consult',
     name: 'ERP Readiness Check',
-    price: 'Free',
+    price: 0,
     delivery: '1 Hour Call',
     label: 'Consultation',
     target: 'For businesses unsure if they are ready for a full ERP implementation.',

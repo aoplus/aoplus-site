@@ -6,7 +6,7 @@ export type Service = {
 
 export type Addon = {
   name: string;
-  price: string;
+  price: number;
 };
 
 export type Bundle = {
@@ -16,9 +16,9 @@ export type Bundle = {
   description: string;
   features: string[];
   pricing: {
-    setup?: string;
-    monthly?: string;
-    oneTime?: string;
+    setup?: number;
+    monthly?: number;
+    oneTime?: number;
   };
   roleInStrategy: string;
   addons: Addon[];
@@ -76,14 +76,14 @@ export const serviceBundles: Bundle[] = [
       "Domain & Business Email Setup",
     ],
     pricing: {
-      oneTime: "₹9,999 one-time",
-      monthly: "₹1,999/month (optional for support)",
+      oneTime: 9999,
+      monthly: 1999,
     },
     roleInStrategy: "A low-friction entry point to generate leads and case studies.",
     addons: [
-      { name: "Product Portfolio PDF", price: "₹3,000" },
-      { name: "Intro / Promo Video", price: "₹5,000" },
-      { name: "Ads Starter Pack", price: "₹10,000" },
+      { name: "Product Portfolio PDF", price: 3000 },
+      { name: "Intro / Promo Video", price: 5000 },
+      { name: "Ads Starter Pack", price: 10000 },
     ],
   },
   {
@@ -101,15 +101,15 @@ export const serviceBundles: Bundle[] = [
       "L1 + L2 Ticketing Support",
     ],
     pricing: {
-      setup: "₹1.5L - ₹4L setup",
-      monthly: "₹25K - ₹40K/month",
+      setup: 150000,
+      monthly: 25000,
     },
     roleInStrategy: "Our primary revenue engine for the MSME sector.",
     addons: [
-        { name: "Advanced HRMS", price: "₹10,000–₹15,000" },
-        { name: "Vendor / Customer Portal", price: "₹10,000–₹20,000" },
-        { name: "Mobile Access", price: "₹5,000–₹10,000" },
-        { name: "BI / Advanced Dashboards", price: "₹15,000–₹25,000" },
+        { name: "Advanced HRMS", price: 10000 },
+        { name: "Vendor / Customer Portal", price: 15000 },
+        { name: "Mobile Access", price: 7500 },
+        { name: "BI / Advanced Dashboards", price: 20000 },
     ],
   },
     {
@@ -125,12 +125,12 @@ export const serviceBundles: Bundle[] = [
       "Google Business Reviews & Visibility Management",
     ],
     pricing: {
-      monthly: "₹4,999 - ₹14,999/month",
+      monthly: 4999,
     },
     roleInStrategy: "Scalable, SaaS-like revenue from high-growth verticals.",
     addons: [
-        { name: "Managed Ads Budget", price: "₹25K–₹40K/month" },
-        { name: "Full Lead Gen Projects", price: "₹1L–₹3L one-time" },
+        { name: "Managed Ads Budget", price: 25000 },
+        { name: "Full Lead Gen Projects", price: 100000 },
     ],
   },
   {
@@ -146,7 +146,7 @@ export const serviceBundles: Bundle[] = [
       "Custom Setup & Onboarding",
     ],
     pricing: {
-      monthly: "₹50K - ₹75K/month",
+      monthly: 50000,
     },
     roleInStrategy: "High-value accounts with significant expansion and growth potential.",
     addons: [],

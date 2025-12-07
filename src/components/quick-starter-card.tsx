@@ -13,6 +13,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import type { StarterKit } from "@/lib/starter-kits";
+import { LocalizedPrice } from "./localized-price";
+import { cn } from "@/lib/utils";
 
 type QuickStarterCardProps = {
   kit: StarterKit;
@@ -28,7 +30,7 @@ export function QuickStarterCard({ kit }: QuickStarterCardProps) {
         </div>
         <CardTitle className="pt-4">{kit.name}</CardTitle>
         <CardDescription className="!mt-1 text-2xl font-bold text-primary">
-          {kit.price}
+          <LocalizedPrice basePriceInr={kit.price} />
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col">

@@ -15,6 +15,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { coreServices, serviceBundles } from "@/lib/services";
 import { Badge } from "@/components/ui/badge";
+import { LocalizedPrice } from "@/components/localized-price";
 
 export const metadata: Metadata = {
   title: "Services & Bundles | AO+ Solutions",
@@ -81,7 +82,7 @@ export default function ServicesPage() {
                       {bundle.addons.map((addon) => (
                         <li key={addon.name} className="flex items-center justify-between text-sm">
                           <span className="text-muted-foreground">{addon.name}</span>
-                          <span className="font-medium">{addon.price}</span>
+                          <span className="font-medium"><LocalizedPrice basePriceInr={addon.price} /></span>
                         </li>
                       ))}
                     </ul>
@@ -91,9 +92,24 @@ export default function ServicesPage() {
             </CardContent>
             <CardFooter className="flex-col items-start gap-4 rounded-b-lg bg-secondary/50 p-6">
                 <div className="w-full space-y-2">
-                    {bundle.pricing.oneTime && <div className="flex justify-between font-bold"><p>One-time Setup:</p> <p>{bundle.pricing.oneTime}</p></div>}
-                    {bundle.pricing.setup && <div className="flex justify-between font-bold"><p>One-time Setup:</p> <p>{bundle.pricing.setup}</p></div>}
-                    {bundle.pricing.monthly && <div className="flex justify-between font-bold"><p>Subscription:</p> <p>{bundle.pricing.monthly}</p></div>}
+                    {bundle.pricing.oneTime && (
+                        <div className="flex justify-between font-bold">
+                            <p>One-time Setup:</p> 
+                            <p><LocalizedPrice basePriceInr={bundle.pricing.oneTime} /></p>
+                        </div>
+                    )}
+                    {bundle.pricing.setup && (
+                         <div className="flex justify-between font-bold">
+                            <p>Setup Fee:</p> 
+                            <p><LocalizedPrice basePriceInr={bundle.pricing.setup} /></p>
+                        </div>
+                    )}
+                    {bundle.pricing.monthly && (
+                        <div className="flex justify-between font-bold">
+                            <p>Subscription:</p> 
+                            <p><LocalizedPrice basePriceInr={bundle.pricing.monthly} />/month</p>
+                        </div>
+                    )}
                 </div>
               <Button asChild className="w-full">
                 <Link href="https://forms.gle/F17TvhBy31N1ij956" target="_blank" rel="noopener noreferrer">
