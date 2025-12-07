@@ -1,8 +1,8 @@
-
 "use client";
 import { useGeolocation } from "@/hooks/use-geolocation";
 import { formatPrice } from "@/lib/currency";
 import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 type LocalizedPriceProps = {
     basePriceInr: number;
