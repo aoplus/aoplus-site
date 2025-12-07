@@ -48,7 +48,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg">
-                <Link href="https://[YOUR_FIREBASE_APP_URL]" target="_blank">
+                <Link href="/audit">
                   <Bot className="mr-2" />
                   Take Free Growth Audit
                 </Link>
