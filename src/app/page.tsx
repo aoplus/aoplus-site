@@ -5,7 +5,6 @@ import {
   ArrowRight,
   BarChart,
   Bot,
-  Briefcase,
   DollarSign,
   Target,
   TrendingUp,
@@ -30,8 +29,6 @@ import {
 import { brands } from '@/lib/brands';
 import { siteConfig } from '@/lib/site';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { serviceBundles } from '@/lib/services';
-import { Badge } from '@/components/ui/badge';
 import { QuickStarterCard } from '@/components/quick-starter-card';
 import { starterKits } from '@/lib/starter-kits';
 
@@ -51,7 +48,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg">
-                <Link href="/audit">
+                <Link href="https://[YOUR_FIREBASE_APP_URL]" target="_blank">
                   <Bot className="mr-2" />
                   Take Free Growth Audit
                 </Link>

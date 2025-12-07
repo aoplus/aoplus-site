@@ -23,7 +23,7 @@ export const siteConfig = {
   navLinks: [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
-    { href: '/audit', label: 'Growth Audit' },
+    { href: 'https://[YOUR_FIREBASE_APP_URL]', label: 'Growth Audit', external: true },
     { href: '/brand-network', label: 'Brand Network' },
     { href: '/careers', label: 'Careers' },
     { href: '/investors', label: 'Investors' },
