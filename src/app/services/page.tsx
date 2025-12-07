@@ -33,7 +33,7 @@ export default function ServicesPage() {
                     Let our AI-powered tool analyze your business. Get a free, instant report that recommends the perfect services for you.
                 </p>
                 <Button asChild variant="secondary" className="mt-6">
-                    <Link href="https://audit.aoplus.in" target="_blank">
+                    <Link href="/audit">
                         <Bot className="mr-2" /> Start Your Free Growth Audit
                     </Link>
                 </Button>
