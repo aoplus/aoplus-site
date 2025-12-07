@@ -48,7 +48,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg">
-                <Link href="/audit">
+                <Link href="https://forms.gle/F17TvhBy31N1ij956" target="_blank">
                   <Bot className="mr-2" />
                   Take Free Growth Audit
                 </Link>

@@ -35,9 +35,10 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
+              target={link.external ? "_blank" : "_self"}
               className={cn(
                 "transition-colors hover:text-foreground/80",
-                pathname === link.href
+                pathname === link.href && !link.external
                   ? "text-foreground"
                   : "text-foreground/60"
               )}
@@ -87,9 +88,10 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    target={link.external ? "_blank" : "_self"}
                     className={cn(
                       "transition-colors hover:text-foreground/80",
-                       pathname === link.href
+                       pathname === link.href && !link.external
                         ? "text-foreground"
                         : "text-foreground/60"
                     )}
