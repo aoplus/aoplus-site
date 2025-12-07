@@ -1,4 +1,3 @@
-
 import { Metadata } from "next";
 import Link from "next/link";
 import { Check, Bot, ArrowRight } from "lucide-react";

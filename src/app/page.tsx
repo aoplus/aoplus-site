@@ -49,9 +49,9 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg">
-                <Link href="/assessment">
+                <Link href="https://audit.aoplus.in" target="_blank">
                   <Bot className="mr-2" />
-                  Free Assessment
+                  Take Free Growth Audit
                 </Link>
               </Button>
               <Button asChild size="lg" variant="secondary">
