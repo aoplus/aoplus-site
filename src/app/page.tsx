@@ -31,6 +31,7 @@ import { siteConfig } from '@/lib/site';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { QuickStarterCard } from '@/components/quick-starter-card';
 import { starterKits } from '@/lib/starter-kits';
+import { LocalizedPrice } from '@/components/localized-price';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'aoplus-hero');
@@ -210,7 +211,7 @@ export default function Home() {
                 <DollarSign className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">$1.5M</div>
+                <div className="text-2xl font-bold"><LocalizedPrice basePriceInr={12500000} /></div>
                 <p className="text-xs text-muted-foreground">by end of 2025</p>
               </CardContent>
             </Card>

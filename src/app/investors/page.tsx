@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import {
   Download,
@@ -16,6 +17,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { LocalizedPrice } from "@/components/localized-price";
 
 export const metadata: Metadata = {
   title: "Investors | AO+ Solutions",
@@ -210,7 +212,7 @@ export default function InvestorsPage() {
               <DollarSign className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">$1.5M</div>
+              <div className="text-2xl font-bold"><LocalizedPrice basePriceInr={12500000} /></div>
               <p className="text-xs text-muted-foreground">by end of 2025</p>
             </CardContent>
           </Card>
