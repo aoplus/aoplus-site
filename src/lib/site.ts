@@ -23,7 +23,7 @@ export const siteConfig = {
   navLinks: [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
-    { href: 'https://audit.aoplus.in', label: 'Growth Audit', external: true },
+    { href: '/audit', label: 'Growth Audit' },
     { href: '/brand-network', label: 'Brand Network' },
     { href: '/careers', label: 'Careers' },
     { href: '/investors', label: 'Investors' },

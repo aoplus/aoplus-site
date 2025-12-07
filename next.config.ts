@@ -5,7 +5,6 @@ const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.s
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: 'export',
   typescript: {
     ignoreBuildErrors: true,
   },

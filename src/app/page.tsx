@@ -32,6 +32,8 @@ import { siteConfig } from '@/lib/site';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { serviceBundles } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
+import { QuickStarterCard } from '@/components/quick-starter-card';
+import { starterKits } from '@/lib/starter-kits';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'aoplus-hero');
@@ -49,7 +51,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg">
-                <Link href="https://audit.aoplus.in" target="_blank">
+                <Link href="/audit">
                   <Bot className="mr-2" />
                   Take Free Growth Audit
                 </Link>
@@ -74,42 +76,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Bundles Section */}
-      <section id="services" className="w-full bg-background py-16 md:py-24">
+      {/* Quick Starter Kits Section */}
+      <section
+        id="starter-kits"
+        className="w-full bg-background py-16 md:py-24"
+      >
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            Solutions for Every Stage of Your Business
+            Quick Starter Kits
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From foundational IT and digital presence to advanced automation and growth marketing, we have a solution that fits.
+            Get your business online and operational in record time with our
+            fixed-price starter packages.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {serviceBundles.slice(0,3).map((bundle) => (
-             <Card key={bundle.id} className="flex flex-col">
-                <CardHeader>
-                    <Badge variant="outline" className='w-fit'>{bundle.targetAudience}</Badge>
-                    <CardTitle className="pt-4">{bundle.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-1">
-                    <CardDescription>
-                        {bundle.description}
-                    </CardDescription>
-                </CardContent>
-                <CardFooter>
-                    <Button asChild variant="secondary" className="w-full">
-                        <Link href={`/services#${bundle.id}`}>
-                            Learn More <ArrowRight className="ml-2" />
-                        </Link>
-                    </Button>
-                </CardFooter>
-             </Card>
+          {starterKits.map((kit) => (
+            <QuickStarterCard key={kit.id} kit={kit} />
           ))}
         </div>
         <div className="mt-12 text-center">
-            <Button asChild variant="link">
-                <Link href="/services">View All Services & Bundles <ArrowRight className="ml-2" /></Link>
-            </Button>
+          <Button asChild variant="link">
+            <Link href="/services">
+              View All Services & Bundles <ArrowRight className="ml-2" />
+            </Link>
+          </Button>
         </div>
       </section>
 
