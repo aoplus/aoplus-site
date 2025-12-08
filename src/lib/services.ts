@@ -101,8 +101,8 @@ export const serviceBundles: Bundle[] = [
       "L1 + L2 Ticketing Support",
     ],
     pricing: {
-      setup: 150000,
-      monthly: 25000,
+      setup: "As per requirement",
+      monthly: 20000,
     },
     roleInStrategy: "Our primary revenue engine for the MSME sector.",
     addons: [
