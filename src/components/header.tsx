@@ -63,7 +63,7 @@ export function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
           <Button asChild>
-            <Link href="https://forms.gle/F17TvhBy31N1ij956" target="_blank" rel="noopener noreferrer">Book Assessment</Link>
+            <Link href="https://erp.aoplus.in/book-consultation/new" target="_blank" rel="noopener noreferrer">Book Assessment</Link>
           </Button>
           <Sheet>
             <SheetTrigger asChild>

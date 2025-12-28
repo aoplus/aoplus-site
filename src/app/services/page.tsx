@@ -34,7 +34,7 @@ export default function ServicesPage() {
                     Let our AI-powered tool analyze your business. Get a free, instant report that recommends the perfect services for you.
                 </p>
                 <Button asChild variant="secondary" className="mt-6">
-                    <Link href="https://forms.gle/F17TvhBy31N1ij956" target="_blank">
+                    <Link href="https://erp.aoplus.in/book-consultation/new" target="_blank">
                         <Bot className="mr-2" /> Start Your Free Growth Audit
                     </Link>
                 </Button>
@@ -112,7 +112,7 @@ export default function ServicesPage() {
                     )}
                 </div>
               <Button asChild className="w-full">
-                <Link href="https://forms.gle/F17TvhBy31N1ij956" target="_blank" rel="noopener noreferrer">
+                <Link href="https://erp.aoplus.in/book-consultation/new" target="_blank" rel="noopener noreferrer">
                   Inquire About Bundle <ArrowRight className="ml-2" />
                 </Link>
               </Button>
