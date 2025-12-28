@@ -49,7 +49,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg">
-                <Link href="https://forms.gle/F17TvhBy31N1ij956" target="_blank">
+                <Link href="https://erp.aoplus.in/book-consultation/new" target="_blank">
                   <Bot className="mr-2" />
                   Take Free Growth Audit
                 </Link>
@@ -208,7 +208,7 @@ export default function Home() {
                 <CardTitle className="text-sm font-medium">
                   ARR Target
                 </CardTitle>
-                <DollarSign className="h-4 w-4 text-muted-foreground" />
+                
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold"><LocalizedPrice basePriceInr={125000000} /></div>
