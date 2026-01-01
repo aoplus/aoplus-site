@@ -210,7 +210,6 @@ const guideHtml = `
   color: #f59e0b;
 }
 
-
 .implementation-timeline {
   padding: 80px 0;
 }
@@ -705,10 +704,8 @@ const guideHtml = `
 }
 </style>
 `;
-
 export default function MsmeGrowthEnginePage() {
     return (
         <div dangerouslySetInnerHTML={{ __html: guideHtml }} />
     );
 }
-
