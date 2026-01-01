@@ -3,6 +3,7 @@ export type NavLink = {
   href: string;
   label: string;
   external?: boolean;
+  children?: NavLink[];
 };
 
 export const siteConfig = {
@@ -22,7 +23,19 @@ export const siteConfig = {
   },
   navLinks: [
     { href: '/', label: 'Home' },
-    { href: '/services', label: 'Services' },
+    { 
+      href: '/services', 
+      label: 'Services',
+      children: [
+        { href: '/services', label: 'All Services' },
+        { href: '/buyers-guide/digital-launchpad', label: 'Digital Launchpad' },
+        { href: '/services/it-foundation', label: 'IT Foundation' },
+        { href: '/services/digital-growth', label: 'Digital Growth' },
+        { href: '/services/msme-growth-engine', label: 'MSME Growth Engine' },
+        { href: '/services/vertical-growth-marketing', label: 'Vertical Growth Marketing' },
+        { href: '/services/enterprise-ops', label: 'Enterprise Ops' },
+      ]
+    },
     { href: 'https://erp.aoplus.in/book-consultation/new', label: 'Growth Audit', external: true },
     { href: '/brand-network', label: 'Brand Network' },
     { href: '/careers', label: 'Careers' },

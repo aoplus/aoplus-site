@@ -14,13 +14,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from "@/components/ui/sheet";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 import { brands } from "@/lib/brands";
 
 export function Header() {
   const pathname = usePathname();
-
   const navLinks = siteConfig.navLinks;
 
   return (
@@ -31,21 +31,39 @@ export function Header() {
           <span className="font-bold">{siteConfig.name}</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              target={link.external ? "_blank" : "_self"}
-              className={cn(
-                "transition-colors hover:text-foreground/80",
-                pathname === link.href && !link.external
-                  ? "text-foreground"
-                  : "text-foreground/60"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.children ? (
+              <DropdownMenu key={link.label}>
+                <DropdownMenuTrigger className={cn(
+                  "flex items-center gap-1 transition-colors hover:text-foreground/80",
+                  pathname.startsWith(link.href) ? "text-foreground" : "text-foreground/60"
+                )}>
+                  {link.label} <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {link.children.map((child) => (
+                    <DropdownMenuItem key={child.href} asChild>
+                      <Link href={child.href}>{child.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                target={link.external ? "_blank" : "_self"}
+                className={cn(
+                  "transition-colors hover:text-foreground/80",
+                  pathname === link.href && !link.external
+                    ? "text-foreground"
+                    : "text-foreground/60"
+                )}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 text-foreground/60 transition-colors hover:text-foreground/80">
               Our Brands <ChevronDown className="h-4 w-4" />
@@ -83,22 +101,43 @@ export function Header() {
                  <Image src="/assets/aoplus-logo.png" alt="AO+ Solutions Logo" width={24} height={24} />
                 <span className="font-bold">{siteConfig.name}</span>
               </Link>
-              <div className="mt-6 flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    target={link.external ? "_blank" : "_self"}
-                    className={cn(
-                      "transition-colors hover:text-foreground/80",
-                       pathname === link.href && !link.external
-                        ? "text-foreground"
-                        : "text-foreground/60"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <div className="mt-6 flex flex-col gap-1">
+                {navLinks.map((link) =>
+                  link.children ? (
+                    <Accordion type="single" collapsible key={link.label} className="w-full">
+                      <AccordionItem value={link.label} className="border-b-0">
+                        <AccordionTrigger className={cn("py-2 font-medium transition-colors hover:no-underline hover:text-foreground/80",
+                          pathname.startsWith(link.href) ? "text-foreground" : "text-foreground/60"
+                        )}>
+                          {link.label}
+                        </AccordionTrigger>
+                        <AccordionContent className="pl-4 pb-2">
+                          <div className="flex flex-col gap-3 pt-1">
+                            {link.children.map((child) => (
+                              <Link key={child.href} href={child.href} className="text-foreground/60 hover:text-foreground/80">
+                                {child.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  ) : (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      target={link.external ? "_blank" : "_self"}
+                      className={cn(
+                        "py-2 font-medium transition-colors hover:text-foreground/80",
+                        pathname === link.href && !link.external
+                          ? "text-foreground"
+                          : "text-foreground/60"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                )}
               </div>
             </SheetContent>
           </Sheet>
