@@ -803,7 +803,6 @@ const guideHtml = `
     <p class="mt-3"><small>Or call: <a href="tel:+917977875818">+91 7977875818</a></small></p>
   </div>
 </section>
-
 `;
 
 export default function ItFoundationPage() {

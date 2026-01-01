@@ -704,3 +704,10 @@ const guideHtml = `
   .included-grid { grid-template-columns: 1fr; }
 }
 </style>
+`;
+
+export default function MsmeGrowthEnginePage() {
+    return (
+        <div dangerouslySetInnerHTML={{ __html: guideHtml }} />
+    );
+}
