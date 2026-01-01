@@ -664,8 +664,8 @@ const guideHtml = `
   font-size: 18px;
 }
 
-.bg-light { background-color: #f9fafb; }
-.lead { font-size: 1.25rem; font-weight: 300; color: #4b5563; }
+.bg-light { background-color: hsl(var(--muted)); }
+.lead { font-size: 1.25rem; font-weight: 300; color: hsl(var(--muted-foreground)); }
 .container { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
 @media (min-width: 1200px) { .container { max-width: 1140px; } }
 .row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
@@ -687,6 +687,7 @@ const guideHtml = `
 .btn-primary { background-color: #f59e0b; color: white; }
 .btn-outline-primary { border: 2px solid #f59e0b; color: #f59e0b; }
 .btn-outline-primary:hover { background-color: #f59e0b; color: white; }
+.img-fluid { max-width: 100%; height: auto; }
 
 
 @media (max-width: 768px) {
@@ -703,7 +704,6 @@ const guideHtml = `
   .included-grid { grid-template-columns: 1fr; }
 }
 </style>
-
 `;
 
 export default function MsmeGrowthEnginePage() {
@@ -712,4 +712,3 @@ export default function MsmeGrowthEnginePage() {
     );
 }
 
-    
