@@ -591,7 +591,6 @@ const guideHtml = `
   }
 }
 </style>
-
 <!-- Hero Section -->
 <section class="service-hero digital-growth">
   <div class="container">
@@ -979,7 +978,7 @@ const guideHtml = `
   <div class="container text-center">
     <h2>Start Growing Your Online Presence</h2>
     <p class="lead">Just ₹2,999/month. No setup fee. Cancel anytime.</p>
-    <a href="https://erp.aoplus.in/book-consultation/new" class="btn btn-primary btn-lg">Start Digital Growth</a>
+    <a href="https://erp.aoplus.in/book-consultation/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Start Digital Growth</a>
     <p class="mt-3"><small>Or call: <a href="tel:+917977875818">+91 7977875818</a></small></p>
   </div>
 </section>
@@ -990,3 +989,5 @@ export default function DigitalGrowthPage() {
         <div dangerouslySetInnerHTML={{ __html: guideHtml }} />
     );
 }
+
+    

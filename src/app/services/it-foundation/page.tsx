@@ -473,7 +473,6 @@ const guideHtml = `
   }
 }
 </style>
-
 <!-- Hero Section -->
 <section class="service-hero it-foundation">
   <div class="container">
@@ -808,3 +807,7 @@ const guideHtml = `
 export default function ItFoundationPage() {
     return (
         <div dangerouslySetInnerHTML={{ __html: guideHtml }} />
+    );
+}
+
+    
