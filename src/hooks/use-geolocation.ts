@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -19,13 +18,15 @@ export function useGeolocation(): Geolocation {
   useEffect(() => {
     async function fetchLocation() {
       try {
-        const response = await fetch('https://ipapi.co/country_code');
+        // Switched to a different geolocation API which might be more reliable or less likely to be blocked.
+        const response = await fetch('https://ipinfo.io/country');
         if (!response.ok) {
           throw new Error('Failed to fetch location');
         }
         const countryCode = await response.text();
         setLocation({
-          countryCode: ALLOWED_COUNTRIES.includes(countryCode) ? countryCode : 'IN',
+          // Trim whitespace from the response and check if it's in the allowed list
+          countryCode: ALLOWED_COUNTRIES.includes(countryCode.trim()) ? countryCode.trim() : 'IN',
           loading: false,
         });
       } catch (error) {
