@@ -704,10 +704,550 @@ const guideHtml = `
   .included-grid { grid-template-columns: 1fr; }
 }
 </style>
-`;
+<!-- Hero Section -->
+<section class="service-hero msme-engine">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <span class="badge-premium">⭐ Most Popular</span>
+        <h1>MSME Growth Engine</h1>
+        <p class="lead">
+          Complete ERPNext transformation with guaranteed ROI. From chaos to clarity in 45-60 days.
+        </p>
+        <div class="pricing-hero">
+          <div class="price-tag">
+            <span class="setup-price">₹1,50,000</span>
+            <span class="label">one-time implementation</span>
+          </div>
+          <div class="plus">+</div>
+          <div class="price-tag">
+            <span class="monthly-price">₹20,000</span>
+            <span class="label">per month support</span>
+          </div>
+        </div>
+        <div class="roi-highlight">
+          <div class="roi-stat">
+            <span class="roi-number">483%</span>
+            <span class="roi-label">Average ROI in Year 1</span>
+          </div>
+          <div class="roi-stat">
+            <span class="roi-number">2.5 months</span>
+            <span class="roi-label">Typical Payback Period</span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="https://erp.aoplus.in/book-consultation/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <i class="fa fa-calendar-check"></i> Schedule Free Demo
+          </a>
+          <a href="#roi-calculator" class="btn btn-outline-primary btn-lg">
+            Calculate Your ROI
+          </a>
+        </div>
+        <div class="trust-badges">
+          <span><i class="fa fa-check-circle"></i> 45-60 Day Implementation</span>
+          <span><i class="fa fa-check-circle"></i> Dedicated Project Manager</span>
+          <span><i class="fa fa-check-circle"></i> 90-Day Guarantee</span>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="value-box">
+          <h3>What You'll Save/Gain:</h3>
+          <div class="value-item">
+            <span class="value-icon">💰</span>
+            <div>
+              <strong>₹4.8L/year</strong>
+              <p>Time savings (40hrs/week × ₹1000/hr)</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">📦</span>
+            <div>
+              <strong>₹7L/year</strong>
+              <p>Inventory optimization</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">💳</span>
+            <div>
+              <strong>₹1.5L/year</strong>
+              <p>Cash flow improvement</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">✅</span>
+            <div>
+              <strong>₹1.2L/year</strong>
+              <p>Compliance & error reduction</p>
+            </div>
+          </div>
+          <div class="total-value">
+            <strong>Total Annual Benefit: ₹21L+</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-export default function MsmeGrowthEnginePage() {
-    return (
-        <div dangerouslySetInnerHTML={{ __html: guideHtml }} />
-    );
-}
+<!-- What Makes This Premium -->
+<section class="premium-features">
+  <div class="container">
+    <h2 class="text-center mb-5">Why Choose MSME Growth Engine?</h2>
+    <div class="row g-4">
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="premium-card">
+          <div class="premium-icon">
+            <i class="fa fa-user-tie fa-2x"></i>
+          </div>
+          <h4>Dedicated Project Manager</h4>
+          <p>Single point of contact throughout implementation. Weekly status calls. 24/7 WhatsApp support.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="premium-card">
+          <div class="premium-icon">
+            <i class="fa fa-cogs fa-2x"></i>
+          </div>
+          <h4>Custom Workflows</h4>
+          <p>We adapt ERPNext to YOUR process, not the other way around. Approval hierarchies, automated alerts, custom reports.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="premium-card">
+          <div class="premium-icon">
+            <i class="fa fa-database fa-2x"></i>
+          </div>
+          <h4>Complete Data Migration</h4>
+          <p>We migrate ALL your data from Excel/Tally/existing system. Opening balances, historical transactions, everything.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="premium-card">
+          <div class="premium-icon">
+            <i class="fa fa-graduation-cap fa-2x"></i>
+          </div>
+          <h4>Comprehensive Training</h4>
+          <p>40 hours of hands-on training. User manuals. Video tutorials. Train-the-trainer program.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="premium-card">
+          <div class="premium-icon">
+            <i class="fa fa-headset fa-2x"></i>
+          </div>
+          <h4>Priority Support</h4>
+          <p>4-hour response time. Dedicated support engineer. Monthly optimization calls. Free minor customizations.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="premium-card">
+          <div class="premium-icon">
+            <i class="fa fa-shield-alt fa-2x"></i>
+          </div>
+          <h4>90-Day Guarantee</h4>
+          <p>If no measurable improvement in 90 days, Month 4 is FREE. We're that confident.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- 45-60 Day Implementation -->
+<section class="implementation-timeline bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Your 45-60 Day Transformation Journey</h2>
+    
+    <div class="phase-timeline">
+      
+      <!-- Phase 1 -->
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-number">Phase 1</span>
+          <h3>Week 1-2: Discovery & Design</h3>
+          <span class="phase-duration">10 days</span>
+        </div>
+        <div class="phase-content">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>What We Do:</h5>
+              <ul>
+                <li>Kickoff meeting at your office</li>
+                <li>Process mapping (sales, purchase, inventory, accounts)</li>
+                <li>Requirements documentation</li>
+                <li>System design & customization plan</li>
+                <li>Data migration strategy</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5>Your Time Investment:</h5>
+              <ul>
+                <li>Kickoff meeting: 3 hours</li>
+                <li>Process interviews: 8-10 hours</li>
+                <li>Requirements review: 2 hours</li>
+              </ul>
+              <p class="time-total"><strong>Total: 15 hours</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Phase 2 -->
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-number">Phase 2</span>
+          <h3>Week 3-4: System Configuration</h3>
+          <span class="phase-duration">10 days</span>
+        </div>
+        <div class="phase-content">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>What We Do:</h5>
+              <ul>
+                <li>ERPNext installation & configuration</li>
+                <li>Chart of accounts setup (GST-compliant)</li>
+                <li>All modules enabled & configured</li>
+                <li>Custom workflows created</li>
+                <li>Print formats designed (invoices, POs, etc.)</li>
+                <li>User roles & permissions</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5>Your Time Investment:</h5>
+              <ul>
+                <li>Review sessions: 4 hours</li>
+                <li>Testing: 3 hours</li>
+                <li>Feedback: 2 hours</li>
+              </ul>
+              <p class="time-total"><strong>Total: 10 hours</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Phase 3 -->
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-number">Phase 3</span>
+          <h3>Week 5-6: Data Migration & Testing</h3>
+          <span class="phase-duration">10 days</span>
+        </div>
+        <div class="phase-content">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>What We Do:</h5>
+              <ul>
+                <li>Customer & supplier master data import</li>
+                <li>Item master with opening stock</li>
+                <li>Opening balances (accounts, inventory)</li>
+                <li>Historical data (optional)</li>
+                <li>User acceptance testing (UAT)</li>
+                <li>Fix issues & refinements</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5>Your Time Investment:</h5>
+              <ul>
+                <li>Data preparation: 10 hours</li>
+                <li>Data verification: 8 hours</li>
+                <li>UAT testing: 12 hours</li>
+              </ul>
+              <p class="time-total"><strong>Total: 30 hours</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Phase 4 -->
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-number">Phase 4</span>
+          <h3>Week 7-8: Training & Go-Live</h3>
+          <span class="phase-duration">10 days</span>
+        </div>
+        <div class="phase-content">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>What We Do:</h5>
+              <ul>
+                <li>Role-based training (40 hours total)</li>
+                <li>Documentation handover</li>
+                <li>Video tutorials created</li>
+                <li>Go-live support (on-site 2 days)</li>
+                <li>Post-go-live monitoring (1 week)</li>
+                <li>Issue resolution</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5>Your Time Investment:</h5>
+              <ul>
+                <li>Training sessions: 40 hours</li>
+                <li>Go-live support: 16 hours</li>
+                <li>First week operations: 20 hours</li>
+              </ul>
+              <p class="time-total"><strong>Total: 75 hours</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="timeline-summary">
+      <h4>Total Project Timeline: 45-60 Days</h4>
+      <p>Your total time investment: <strong>130 hours over 2 months</strong> (avg 16 hours/week)</p>
+      <p>After go-live: <strong>Business as usual</strong> - ERPNext works for you 24/7</p>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ROI Calculator -->
+<section id="roi-calculator" class="roi-section">
+  <div class="container">
+    <h2 class="text-center mb-5">Calculate Your ROI</h2>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        
+        <div class="roi-calculator-box">
+          <h3>Conservative ROI Estimate</h3>
+          
+          <div class="roi-breakdown">
+            <div class="roi-item">
+              <div class="roi-label">Year 1 Investment</div>
+              <div class="roi-value investment">
+                <div class="calculation">
+                  <span>Setup: ₹1,50,000</span>
+                  <span>Monthly (12 months): ₹2,40,000</span>
+                </div>
+                <div class="total">= ₹3,90,000</div>
+              </div>
+            </div>
+            
+            <div class="roi-divider">vs</div>
+            
+            <div class="roi-item">
+              <div class="roi-label">Year 1 Returns (Conservative)</div>
+              <div class="roi-value returns">
+                <div class="calculation">
+                  <span>Time Savings: ₹4,80,000</span>
+                  <span>Inventory Optimization: ₹7,00,000</span>
+                  <span>Cash Flow Improvement: ₹1,50,000</span>
+                  <span>Error Reduction: ₹1,50,000</span>
+                  <span>Compliance Savings: ₹1,20,000</span>
+                  <span>Better Decisions: ₹5,00,000</span>
+                </div>
+                <div class="total">= ₹21,00,000</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="roi-result">
+            <div class="result-item">
+              <span class="result-label">Net Benefit Year 1:</span>
+              <span class="result-value profit">₹17,10,000</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">ROI:</span>
+              <span class="result-value">438%</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Payback Period:</span>
+              <span class="result-value">2.5 months</span>
+            </div>
+          </div>
+          
+          <div class="roi-note">
+            <p><strong>5-Year Projection:</strong></p>
+            <p>Investment: ₹10,80,000 (setup + 5 years support)</p>
+            <p>Returns: ₹1,05,00,000+</p>
+            <p><strong>Net Gain: ₹94,20,000+</strong></p>
+          </div>
+          
+        </div>
+        
+        <div class="case-study-examples">
+          <h4>Real Client Examples:</h4>
+          
+          <div class="case-example">
+            <div class="case-header">
+              <span class="case-industry">Manufacturing (Auto Components)</span>
+              <span class="case-roi">650% ROI</span>
+            </div>
+            <p><strong>Challenge:</strong> ₹11L locked in excess inventory, manual stock tracking, no real-time visibility.</p>
+            <p><strong>Result:</strong> Freed ₹11L in 3 months, reduced stock-outs by 85%, automated reordering.</p>
+          </div>
+          
+          <div class="case-example">
+            <div class="case-header">
+              <span class="case-industry">Trading (Electronics Distribution)</span>
+              <span class="case-roi">420% ROI</span>
+            </div>
+            <p><strong>Challenge:</strong> Month-end closing took 7 days, frequent invoicing errors, no sales analytics.</p>
+            <p><strong>Result:</strong> Month-end in 2 hours, zero errors, sales grew 23% with better insights.</p>
+          </div>
+          
+          <div class="case-example">
+            <div class="case-header">
+              <span class="case-industry">Services (Facilities Management)</span>
+              <span class="case-roi">580% ROI</span>
+            </div>
+            <p><strong>Challenge:</strong> Project costing unclear, resource utilization poor, payroll chaos.</p>
+            <p><strong>Result:</strong> Project margins improved 6%, resource utilization up 40%, automated payroll.</p>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What's Included -->
+<section class="included-section bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Everything You Get</h2>
+    
+    <div class="included-grid">
+      
+      <div class="included-category">
+        <h4>🎯 Implementation (₹1,50,000)</h4>
+        <ul>
+          <li>Dedicated project manager (260-290 hours)</li>
+          <li>Discovery & requirements (30-40 hours)</li>
+          <li>System configuration (60-70 hours)</li>
+          <li>Custom workflows & reports</li>
+          <li>Data migration (50-60 hours)</li>
+          <li>User training (40 hours)</li>
+          <li>Go-live support (80 hours)</li>
+          <li>Infrastructure setup</li>
+          <li>GST-compliant print formats</li>
+          <li>Documentation & SOPs</li>
+        </ul>
+      </div>
+      
+      <div class="included-category">
+        <h4>💻 Monthly Support (₹20,000/month)</h4>
+        <ul>
+          <li>Cloud hosting (50GB storage)</li>
+          <li>Unlimited users</li>
+          <li>Technical support (4-hour response)</li>
+          <li>Business support & optimization</li>
+          <li>System maintenance & updates</li>
+          <li>Daily automated backups</li>
+          <li>Security patches</li>
+          <li>Compliance updates (GST, etc.)</li>
+          <li>Monthly review call (1 hour)</li>
+          <li>Minor customizations (up to 2 hours/month)</li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Who Should Choose This -->
+<section class="target-audience">
+  <div class="container">
+    <h2 class="text-center mb-5">Is MSME Growth Engine Right for You?</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="audience-card ideal">
+          <h3>✅ Perfect For:</h3>
+          <ul>
+            <li>Established MSMEs (20-100 employees)</li>
+            <li>Annual revenue ₹5Cr-50Cr</li>
+            <li>Multiple departments/locations</li>
+            <li>Complex workflows & approvals</li>
+            <li>Inventory-intensive businesses</li>
+            <li>Ready for serious digital transformation</li>
+            <li>Can invest ₹3.9L in Year 1</li>
+            <li>Have 130+ hours for implementation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="audience-card not-ideal">
+          <h3>❌ Not Right If:</h3>
+          <ul>
+            <li>Very small business (<10 employees)</li>
+            <li>Simple operations (no inventory)</li>
+            <li>Budget <₹30k/month</li>
+            <li>Need implementation in <30 days</li>
+            <li>Not ready for change management</li>
+          </ul>
+          <div class="alternative">
+            <p><strong>Consider instead:</strong></p>
+            <p>→ <a href="/services/it-foundation">IT Foundation</a> (₹24,999/month, faster setup)</p>
+            <p>→ <a href="/services/digital-launchpad">Digital Launchpad</a> (₹1,999/month, very basic)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Common Questions</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        
+        <div class="faq-item">
+          <h5>What's the difference between this and IT Foundation?</h5>
+          <p><strong>IT Foundation (₹24,999/month):</strong> Standard ERPNext implementation, 30 days, basic customization, email support.</p>
+          <p><strong>MSME Growth Engine (₹1.5L + ₹20k/month):</strong> Premium implementation, 45-60 days, full customization, dedicated PM, priority support, 90-day guarantee, extensive training.</p>
+          <p>Choose this if you need white-glove service and guaranteed results.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h5>Can I pay in installments?</h5>
+          <p>Yes! Payment terms: 50% on signing, 25% at go-live, 25% after 30 days of successful operation.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h5>What happens after 60 days?</h5>
+          <p>Your system is live and your team is trained. We provide ongoing support (₹20k/month) for maintenance, updates, and continuous optimization. We stay with you as your business grows.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h5>What if we need more customization later?</h5>
+          <p>Minor customizations (up to 2 hours/month) are included in monthly fee. Major customizations are charged at ₹5,000-10,000 depending on complexity.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h5>Do you provide on-site support?</h5>
+          <p>Yes! Kickoff meeting and go-live support are on-site (included). Additional on-site visits can be arranged at ₹10,000/day + travel.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h5>What's the 90-day guarantee?</h5>
+          <p>If you don't see measurable improvement in your business operations within 90 days of go-live, we'll give you Month 4 support completely FREE and continue working until you do see results. That's how confident we are.</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-section">
+  <div class="container text-center">
+    <h2>Ready to Transform Your MSME?</h2>
+    <p class="lead">Book a free 30-minute demo and see how MSME Growth Engine can deliver 400%+ ROI</p>
+    <a href="https://erp.aoplus.in/book-consultation/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Schedule Free Demo</a>
+    <p class="mt-3"><small>Or call our MSME specialist: <a href="tel:+917977875818">+91 7977875818</a></small></p>
+    <div class="guarantee-badge">
+      <i class="fa fa-shield-alt"></i>
+      <span>90-Day Results Guarantee</span>
+    </div>
+  </div>
+</section>

@@ -496,7 +496,7 @@ const guideHtml = `
           </div>
         </div>
         <div class="hero-cta">
-          <a href="https://erp.aoplus.in/book-consultation/new" class="btn btn-primary btn-lg">
+          <a href="https://erp.aoplus.in/book-consultation/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
             <i class="fas fa-calendar-check"></i> Schedule Demo
           </a>
           <a href="#features" class="btn btn-outline-primary btn-lg">
@@ -786,7 +786,7 @@ const guideHtml = `
             <li>Not ready for change management</li>
           </ul>
           <div class="alternative">
-            <p><strong>Consider instead:</strong> <a href="/buyers-guide/digital-launchpad">Digital Launchpad</a> for simpler needs</p>
+            <p><strong>Consider instead:</strong> <a href="/services/digital-launchpad">Digital Launchpad</a> for simpler needs</p>
           </div>
         </div>
       </div>
@@ -799,7 +799,7 @@ const guideHtml = `
   <div class="container text-center">
     <h2>Ready to Transform Your Business?</h2>
     <p class="lead">Book a free demo and see ERPNext in action</p>
-    <a href="https://erp.aoplus.in/book-consultation/new" class="btn btn-primary btn-lg">Schedule Free Demo</a>
+    <a href="https://erp.aoplus.in/book-consultation/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Schedule Free Demo</a>
     <p class="mt-3"><small>Or call: <a href="tel:+917977875818">+91 7977875818</a></small></p>
   </div>
 </section>
@@ -808,5 +808,3 @@ const guideHtml = `
 export default function ItFoundationPage() {
     return (
         <div dangerouslySetInnerHTML={{ __html: guideHtml }} />
-    );
-}

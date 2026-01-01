@@ -28,7 +28,7 @@ export const siteConfig = {
       label: 'Services',
       children: [
         { href: '/services', label: 'All Services' },
-        { href: '/buyers-guide/digital-launchpad', label: 'Digital Launchpad' },
+        { href: '/services/digital-launchpad', label: 'Digital Launchpad' },
         { href: '/services/it-foundation', label: 'IT Foundation' },
         { href: '/services/digital-growth', label: 'Digital Growth' },
         { href: '/services/msme-growth-engine', label: 'MSME Growth Engine' },
