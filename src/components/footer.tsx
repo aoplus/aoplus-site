@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
@@ -63,9 +64,15 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t">
-        <div className="container flex flex-col items-center justify-between gap-2 px-4 py-4 text-sm text-muted-foreground sm:flex-row md:px-6">
-          <p>© {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.</p>
-          <p>Made with ❤️ in India.</p>
+        <div className="container flex flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-muted-foreground md:flex-row">
+            <div className="flex flex-col gap-2 text-center md:text-left">
+                <p>© {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.</p>
+                <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 md:justify-start">
+                    <span>CIN: U72900MH2019PTC330056</span>
+                    <span>GSTIN: 27AASCA6842P2ZQ</span>
+                </div>
+            </div>
+            <p className="shrink-0">Made with ❤️ in India.</p>
         </div>
       </div>
     </footer>
