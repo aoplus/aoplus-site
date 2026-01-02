@@ -4,6 +4,7 @@ import { Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import { siteConfig } from "@/lib/site";
 import { brands } from "@/lib/brands";
+import type { NavLink } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -29,9 +30,14 @@ export function Footer() {
         <div>
           <h4 className="mb-2 font-semibold">Company</h4>
           <ul className="space-y-2">
-            {siteConfig.footerLinks.map((link) => (
+            {siteConfig.footerLinks.map((link: NavLink) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground">
+                <Link 
+                  href={link.href} 
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                  target={link.external ? "_blank" : "_self"}
+                  rel={link.external ? "noopener noreferrer" : ""}
+                >
                   {link.label}
                 </Link>
               </li>

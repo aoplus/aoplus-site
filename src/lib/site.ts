@@ -42,7 +42,7 @@ export const siteConfig = {
     { href: '/investors', label: 'Investors' },
   ] as NavLink[],
   footerLinks: [
-     { href: '/about', label: 'About Us' },
+     { href: 'https://erp.aoplus.in/about/our-story', label: 'Our Story', external: true },
      { href: '/services', label: 'Services' },
      { href: '/careers', label: 'Careers' },
      { href: '/investors', label: 'Investors' },
