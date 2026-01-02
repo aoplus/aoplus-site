@@ -61,7 +61,12 @@ export function Footer() {
           <ul className="space-y-2">
             {siteConfig.legalLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground">
+                <Link
+                  href={link.href}
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                  target={link.external ? "_blank" : "_self"}
+                  rel={link.external ? "noopener noreferrer" : ""}
+                >
                   {link.label}
                 </Link>
               </li>

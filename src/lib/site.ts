@@ -48,7 +48,7 @@ export const siteConfig = {
      { href: '/investors', label: 'Investors' },
   ] as NavLink[],
   legalLinks: [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
+    { href: 'https://erp.aoplus.in/privacy-policy', label: 'Privacy Policy', external: true },
+    { href: 'https://erp.aoplus.in/terms', label: 'Terms of Service', external: true },
   ] as NavLink[]
 };
