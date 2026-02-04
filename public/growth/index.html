@@ -3,23 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AO+ Growth</title>
-    <link rel="stylesheet" href="/growth/css/styles.css">
+    <title>AO+ Growth | Enterprise ERP for Indian MSMEs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>AO+ Growth</h1>
-        <p>Enterprise ERP for MSMEs</p>
-    </header>
-    <main>
+
+    <header class="header">
         <div class="container">
-            <h2>Transforming MSME Operations</h2>
-            <p>This is the placeholder page for the AO+ Growth initiative. The full site is available at the <a href="https://github.com/aoplus/growth">GitHub repository</a>.</p>
-            <p>We provide ERPNext implementation and digital transformation services for growing Indian MSMEs, bringing enterprise-grade efficiency at a scale-friendly price.</p>
+            <a href="#" class="logo">
+                AO+ <span class="logo-accent">Growth</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#final-cta" class="btn btn-primary">Book Free Consultation</a>
+            <div class="mobile-nav-toggle">☰</div>
         </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Enterprise ERP Solutions. At MSME-Friendly Prices.</h1>
+                    <p class="subheadline">
+                        Go from Excel chaos to organized ERP in 8 weeks. ERPNext implementation for ₹1-3 Lakhs (not ₹10-50 Lakhs big consultants charge). Built for ₹50L-₹10Cr Indian businesses.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#final-cta" class="btn btn-primary">Book Free Consultation</a>
+                        <a href="#pricing" class="btn btn-secondary">See Our Packages</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://img.freepik.com/free-photo/view-professional-business-person-working-office_23-2150912753.jpg?t=st=1716896263~exp=1716899863~hmac=a66b73a38a16709841f3e7b233a1e041695f68b3711904a29a4358a93e3d489b&w=1380" alt="ERPNext Dashboard">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-headline">
+                    <h2>Is Your Business Running on Excel and WhatsApp?</h2>
+                    <p>You're not alone. 80% of Indian MSMEs struggle with these exact challenges.</p>
+                </div>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="icon">📊</div>
+                        <h3>Excel Chaos</h3>
+                        <p>Ten different versions of the same file. Formulas breaking. No idea which is the latest. Sound familiar?</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="icon">📦</div>
+                        <h3>Inventory Nightmares</h3>
+                        <p>Stockouts when customers want to buy. Overstocking products that don't sell. Orders delayed because you thought you had inventory.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="icon">💸</div>
+                        <h3>Manual Invoicing Takes Forever</h3>
+                        <p>Spending 4-5 hours every week creating invoices in Excel, copying data from orders, and chasing payments manually.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="icon">📈</div>
+                        <h3>Can't Scale</h3>
+                        <p>You hired 5 new people, and chaos increased 10x. More WhatsApp groups, more Excel files, more confusion.</p>
+                    </div>
+                </div>
+                <p class="problem-closing">We get it. Manual processes are holding you back. There's a better way.</p>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: white;">
+            <div class="container">
+                <div class="section-headline">
+                    <h2>One System. Complete Business Control.</h2>
+                    <p>We implement ERPNext—a powerful, open-source ERP that handles accounting, inventory, sales, HR—everything in one place.</p>
+                </div>
+                <div class="solution-benefits">
+                    <div class="benefit-card">
+                        <div class="icon">💰</div>
+                        <h3>Affordable</h3>
+                        <p>₹1-3 Lakhs for complete implementation. No annual license fees. Just low hosting costs.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="icon">⚡</div>
+                        <h3>Fast</h3>
+                        <p>Go live in 6-8 weeks, not 6-12 months. We implement, migrate data, train your team, and support you.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="icon">🎯</div>
+                        <h3>Simple</h3>
+                        <p>Built for MSMEs, not Fortune 500s. We handle the tech stuff so you can focus on your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <div class="container">
+                <div class="section-headline">
+                    <h2>Choose Your Package</h2>
+                    <p>Fixed pricing. Clear deliverables. Predictable timelines.</p>
+                </div>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <span class="package-badge" style="background-color: var(--accent);">Best for Small MSMEs</span>
+                        <h3>Starter</h3>
+                        <p class="package-price">₹1,49,000</p>
+                        <p class="package-billing">(One-time)</p>
+                        <ul>
+                            <li>Basic ERP modules (Accounting, Inventory, Sales, Purchase)</li>
+                            <li>Up to 10 users</li>
+                            <li>Data migration (500 records)</li>
+                            <li>2 training sessions (4 hours total)</li>
+                            <li>1 month post-launch support</li>
+                        </ul>
+                         <p class="package-who">Ideal for trading or retail businesses moving from Excel/Tally.</p>
+                        <a href="#final-cta" class="btn btn-secondary">Get Started</a>
+                    </div>
+                    <div class="package-card highlighted">
+                        <span class="package-badge">⭐ Most Popular</span>
+                        <h3>Growth</h3>
+                        <p class="package-price">₹2,49,000</p>
+                        <p class="package-billing">(One-time)</p>
+                        <ul>
+                            <li>Everything in Starter, PLUS:</li>
+                            <li>Advanced modules (Manufacturing, CRM, Projects, HR)</li>
+                            <li>Up to 25 users</li>
+                            <li>Data migration (2,000 records)</li>
+                            <li>Custom fields (15) & reports (5)</li>
+                            <li>Payment gateway integration</li>
+                            <li>4 training sessions (8 hours)</li>
+                            <li>2 months post-launch support</li>
+                        </ul>
+                        <p class="package-who">For growing manufacturers or distributors needing a full ERP suite.</p>
+                        <a href="#final-cta" class="btn btn-primary">Choose Growth</a>
+                    </div>
+                    <div class="package-card">
+                         <span class="package-badge" style="background-color: var(--accent);">Best for Established MSMEs</span>
+                        <h3>Scale</h3>
+                        <p class="package-price">₹3,99,000+</p>
+                        <p class="package-billing">(Custom Pricing)</p>
+                        <ul>
+                            <li>Everything in Growth, PLUS:</li>
+                            <li>Full suite (all modules)</li>
+                            <li>Unlimited users</li>
+                            <li>Data migration (10,000+ records)</li>
+                             <li>Custom app development</li>
+                            <li>E-commerce integration</li>
+                            <li>On-site visit (1-2 days)</li>
+                            <li>3 months post-launch support</li>
+                        </ul>
+                         <p class="package-who">For multi-location businesses or complex manufacturing operations.</p>
+                        <a href="#final-cta" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <div class="section-headline">
+                    <h2>From Excel to ERP in 5 Simple Steps</h2>
+                </div>
+                <div class="how-it-works-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-week">Week 0</span>
+                            <h4>Free Consultation</h4>
+                            <p>30-minute call to understand your business challenges. No sales pressure.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-week">Day 2-3</span>
+                            <h4>Fixed-Price Proposal</h4>
+                            <p>A detailed proposal with clear scope, timeline, and pricing. No hidden costs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                             <span class="timeline-week">Week 1</span>
+                            <h4>Kickoff & Setup</h4>
+                            <p>We start with requirements gathering, ERP installation, and initial configuration.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                             <span class="timeline-week">Weeks 2-7</span>
+                            <h4>Implementation</h4>
+                            <p>We configure modules, migrate your data, customize fields, and test thoroughly.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                             <span class="timeline-week">Week 8</span>
+                            <h4>Training & Go-Live</h4>
+                            <p>We train your team, go live with real data, and provide 1-3 months of support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="final-cta" class="section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Move from Excel to ERP?</h2>
+                    <p>Book a free 30-minute consultation. No sales pitch—we'll genuinely assess if ERP is right for you and recommend the best package.</p>
+                    <p style="margin-top: 1rem; font-size: 1rem;">Prefer email? Write to: <a href="mailto:growth@aoplus.in" style="color: white; text-decoration: underline;">growth@aoplus.in</a></p>
+                </div>
+                <div class="cta-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="revenue">Annual Revenue</label>
+                            <select id="revenue">
+                                <option><₹50L</option>
+                                <option>₹50L-1Cr</option>
+                                <option>₹1-2Cr</option>
+                                <option>₹2-5Cr</option>
+                                <option>₹5-10Cr</option>
+                                <option>₹10Cr+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="challenge">Biggest Challenge</label>
+                            <textarea id="challenge" placeholder="E.g., Excel errors, can't track inventory..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <button type="submit" class="btn">Book Free Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
     </main>
-    <footer>
-        <p>&copy; 2026 AO+ Solutions Pvt Ltd. All rights reserved.</p>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>AO+ Growth</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services & Pricing</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#about">About AO+</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                     <ul>
+                        <li><a href="#pricing">Starter ERP Package</a></li>
+                        <li><a href="#pricing">Growth ERP Package</a></li>
+                        <li><a href="#pricing">Scale ERP Package</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>AO+ Family</h4>
+                     <ul>
+                        <li><a href="https://prodory.com" target="_blank">Prodory.com</a></li>
+                        <li><a href="#">DigiAds.click</a></li>
+                        <li><a href="https://aoplus.in" target="_blank">AO+ Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal & Support</h4>
+                     <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="mailto:growth@aoplus.in">Email: growth@aoplus.in</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>AO+ Growth is a division of AO+ Solutions Pvt Ltd</p>
+                <p>CIN: U72900MH2019PTC330056 | GSTIN: 27AASCA6842P2ZQ</p>
+                <p>&copy; 2024 AO+ Solutions Pvt Ltd. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
