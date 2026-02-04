@@ -1,368 +1,360 @@
 
-import { Check, Gauge, Zap, Gem, ShoppingCart, FileText, Boxes, Factory, Users, BarChart, Phone, File, Rocket, Wrench, CheckCircle } from 'lucide-react';
+import { Check, Gauge, Zap, Gem, ShoppingCart, FileText, Boxes, Factory, Users, BarChart, Phone, File, Rocket, Wrench, CheckCircle, Search, Settings, Cloud, HardHat, Briefcase, HeartPulse, Building } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Progress } from "@/components/ui/progress"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const iconMap = {
-  "📊": <Gauge className="h-10 w-10 text-[#FF6B35]" />,
-  "📦": <Boxes className="h-10 w-10 text-[#FF6B35]" />,
-  "💸": <FileText className="h-10 w-10 text-[#FF6B35]" />,
-  "📈": <BarChart className="h-10 w-10 text-[#FF6B35]" />,
-  "💰": <Gem className="h-8 w-8 text-[#FF6B35]" />,
-  "⚡": <Zap className="h-8 w-8 text-[#FF6B35]" />,
-  "🎯": <CheckCircle className="h-8 w-8 text-[#FF6B35]" />,
-  "📞": <Phone className="h-8 w-8 text-white" />,
-  "📄": <File className="h-8 w-8 text-white" />,
-  "🚀": <Rocket className="h-8 w-8 text-white" />,
-  "🛠️": <Wrench className="h-8 w-8 text-white" />,
-  "✅": <Check className="h-8 w-8 text-white" />,
+  "implementation": <Settings className="h-10 w-10 text-[#14B8A6]" />,
+  "customization": <Wrench className="h-10 w-10 text-[#14B8A6]" />,
+  "support": <HardHat className="h-10 w-10 text-[#14B8A6]" />,
+  "hosting": <Cloud className="h-10 w-10 text-[#14B8A6]" />,
+  "accounting": <FileText className="h-8 w-8 text-[#1E3A8A]" />,
+  "inventory": <Boxes className="h-8 w-8 text-[#1E3A8A]" />,
+  "sales": <BarChart className="h-8 w-8 text-[#1E3A8A]" />,
+  "hrms": <Users className="h-8 w-8 text-[#1E3A8A]" />,
+  "website": <Search className="h-8 w-8 text-[#1E3A8A]" />,
+  "manufacturing": <Factory className="h-8 w-8 text-[#1E3A8A]" />,
 };
 
 export default function GrowthPage() {
   return (
-    <div>
+    <div className="font-['Poppins',_sans-serif]">
       {/* Hero Section */}
-      <section className="bg-white py-20">
+      <section className="bg-gradient-to-r from-[#1E3A8A] to-[#2563EB] text-white py-24">
         <div className="container mx-auto grid items-center gap-12 md:grid-cols-2">
-          <div>
-            <h1 className="text-4xl font-bold leading-tight text-gray-800 md:text-5xl">
-              Enterprise ERP Solutions. <br />
-              <span className="text-[#FF6B35]">At MSME-Friendly Prices.</span>
+          <div className="flex flex-col gap-6">
+            <h1 className="text-5xl font-bold leading-tight">
+              Leading ERPNext Consultants for Indian MSMEs
             </h1>
-            <p className="mt-6 text-lg text-gray-600">
-              Go from Excel chaos to organized ERP in 8 weeks. ERPNext implementation for ₹1-3 Lakhs (not ₹10-50 Lakhs big consultants charge). Built for ₹50L - ₹10Cr Indian businesses.
+            <p className="text-lg text-gray-200">
+              We specialize in ERPNext implementation tailored to the unique needs of Indian businesses. Transform your operations with India's most trusted ERP partner.
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Button asChild size="lg" className="rounded-full bg-[#FF6B35] px-8 py-6 text-base text-white hover:bg-[#FF6B35]/90">
-                <Link href="#contact">Book Free Consultation</Link>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Button asChild size="lg" className="rounded-md bg-[#FF6600] px-8 py-6 text-base text-white hover:bg-[#FF6600]/90">
+                <Link href="#contact">Get Started</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full border-[#FF6B35] px-8 py-6 text-base text-[#FF6B35] hover:bg-[#FF6B35]/10 hover:text-[#FF6B35]">
-                <Link href="#pricing">See Our Packages</Link>
+              <Button asChild size="lg" variant="outline" className="rounded-md border-white px-8 py-6 text-base text-white hover:bg-white/10">
+                <Link href="#contact">Free ERP Demo</Link>
               </Button>
             </div>
           </div>
           <div className="flex justify-center">
             <Image
-              src="https://picsum.photos/seed/erp-dashboard/600/450"
-              alt="ERPNext Dashboard"
+              src="https://picsum.photos/seed/erpdashboard/600/400"
+              alt="ERPNext Dashboard Mockup"
               data-ai-hint="erp dashboard"
               width={600}
-              height={450}
+              height={400}
               className="rounded-lg shadow-2xl"
             />
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-20">
+      {/* Trust Bar */}
+      <section className="bg-gray-50 py-4">
+        <div className="container mx-auto flex flex-wrap items-center justify-center gap-8 text-sm font-semibold text-gray-600 md:justify-between">
+          <div className="flex items-center gap-2">
+            <CheckCircle className="h-5 w-5 text-[#14B8A6]" />
+            <span>Official ERPNext Partner</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Users className="h-5 w-5 text-[#14B8A6]" />
+            <span>1,000+ Projects Completed</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <HardHat className="h-5 w-5 text-[#14B8A6]" />
+            <span>24/7 Support</span>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800">Is Your Business Running on Excel and WhatsApp?</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-gray-600">You're not alone. 80% of Indian MSMEs struggle with these exact challenges.</p>
+          <span className="text-sm font-bold uppercase text-[#14B8A6]">About Us</span>
+          <h2 className="mt-2 text-4xl font-bold text-[#1E3A8A]">AO+ Growth India - Leading ERP Consultants in India</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-gray-600">
+            ERP Consultants in India: AO+ Growth offers effective ERP solutions with experienced handling of ERPNext, tailored for MSMEs across India. With presence in Bangalore, Mumbai, and Pune, we empower companies to achieve digital transformation.
+          </p>
+          <p className="mt-4 font-semibold text-lg text-gray-800">'AO+ Growth – Official ERPNext Partner in India'</p>
+          <p className="mt-2 text-gray-600">Expert solutions for small, medium, and large enterprises in India.</p>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+             <Card>
+              <CardContent className="p-0">
+                <Image src="https://picsum.photos/seed/customization/400/250" width={400} height={250} alt="ERP Customization" className="w-full rounded-t-lg" data-ai-hint="erp customization" />
+              </CardContent>
+              <CardFooter className="p-4 bg-gray-50 rounded-b-lg">
+                <p className="font-semibold text-gray-700">ERP Customization for All Business Sizes</p>
+              </CardFooter>
+             </Card>
+              <Card>
+              <CardContent className="p-0">
+                <Image src="https://picsum.photos/seed/experts/400/250" width={400} height={250} alt="Expert Solutions" className="w-full rounded-t-lg" data-ai-hint="expert team" />
+              </CardContent>
+              <CardFooter className="p-4 bg-gray-50 rounded-b-lg">
+                <p className="font-semibold text-gray-700">Expert solutions for enterprises</p>
+              </CardFooter>
+             </Card>
+              <Card>
+              <CardContent className="p-0">
+                <Image src="https://picsum.photos/seed/support/400/250" width={400} height={250} alt="Comprehensive Support" className="w-full rounded-t-lg" data-ai-hint="customer support" />
+              </CardContent>
+              <CardFooter className="p-4 bg-gray-50 rounded-b-lg">
+                <p className="font-semibold text-gray-700">Comprehensive Support</p>
+              </CardFooter>
+             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="bg-[#F7F9FC] py-20">
+        <div className="container mx-auto text-center">
+           <span className="text-sm font-bold uppercase text-[#14B8A6]">What We Do</span>
+          <h2 className="mt-2 text-4xl font-bold text-[#1E3A8A]">Discover Our Best ERP Services</h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <Card className="text-center">
-              <CardHeader>{iconMap["📊"]}</CardHeader>
-              <CardTitle className="text-xl font-semibold">Excel Chaos</CardTitle>
-              <CardContent className="pt-2 text-sm text-gray-500">Ten different versions of the same file. Formulas breaking when someone edits. No idea which is the latest. Sound familiar?</CardContent>
+              <CardHeader className="items-center">{iconMap["implementation"]}</CardHeader>
+              <CardTitle className="text-xl font-semibold">ERP Implementation</CardTitle>
+              <CardContent className="pt-2 text-sm text-gray-500">Multi-phase strategy: redesigning, configuration, migrating data, & training</CardContent>
+              <CardFooter><Link href="#" className="font-semibold text-[#1E3A8A]">Learn more →</Link></CardFooter>
             </Card>
             <Card className="text-center">
-              <CardHeader>{iconMap["📦"]}</CardHeader>
-              <CardTitle className="text-xl font-semibold">Inventory Nightmares</CardTitle>
-              <CardContent className="pt-2 text-sm text-gray-500">Stockouts when customers want to buy. Overstocking products that don't sell. Can't track what's in which warehouse.</CardContent>
+              <CardHeader className="items-center">{iconMap["customization"]}</CardHeader>
+              <CardTitle className="text-xl font-semibold">ERP Customization</CardTitle>
+              <CardContent className="pt-2 text-sm text-gray-500">Effortlessly adjust modules, functions, and settings to meet your business goals.</CardContent>
+              <CardFooter><Link href="#" className="font-semibold text-[#1E3A8A]">Learn more →</Link></CardFooter>
             </Card>
             <Card className="text-center">
-              <CardHeader>{iconMap["💸"]}</CardHeader>
-              <CardTitle className="text-xl font-semibold">Manual Invoicing Takes Forever</CardTitle>
-              <CardContent className="pt-2 text-sm text-gray-500">Spending hours every week creating invoices, copying data from orders, making calculation errors, chasing payments manually.</CardContent>
+              <CardHeader className="items-center">{iconMap["support"]}</CardHeader>
+              <CardTitle className="text-xl font-semibold">ERP Support & Maintenance</CardTitle>
+              <CardContent className="pt-2 text-sm text-gray-500">ERP software support for new or existing systems. 24/7 assistance.</CardContent>
+              <CardFooter><Link href="#" className="font-semibold text-[#1E3A8A]">Learn more →</Link></CardFooter>
             </Card>
              <Card className="text-center">
-              <CardHeader>{iconMap["📈"]}</CardHeader>
-              <CardTitle className="text-xl font-semibold">Can't Scale</CardTitle>
-              <CardContent className="pt-2 text-sm text-gray-500">You hired more people, but chaos increased 10x. More WhatsApp groups, more Excel files, more confusion.</CardContent>
+              <CardHeader className="items-center">{iconMap["hosting"]}</CardHeader>
+              <CardTitle className="text-xl font-semibold">ERP Hosting</CardTitle>
+              <CardContent className="pt-2 text-sm text-gray-500">Reliable & high-performance hosting designed specifically for your ERP requirements.</CardContent>
+              <CardFooter><Link href="#" className="font-semibold text-[#1E3A8A]">Learn more →</Link></CardFooter>
             </Card>
           </div>
-           <p className="mx-auto mt-12 max-w-2xl text-gray-600">We get it. You started small, Excel worked fine. But now you're growing, and manual processes are holding you back. <span className="font-semibold">There's a better way.</span></p>
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="bg-white py-20">
-         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800">One System. Complete Business Control.</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-gray-600">AO+ Growth implements ERPNext—a powerful, open-source ERP used by 5,000+ companies worldwide. It handles accounting, inventory, sales, purchases, manufacturing, HR—everything in one place. No more juggling between Excel, Tally, WhatsApp, and emails.</p>
-           <div className="mt-12 grid gap-8 md:grid-cols-3">
-              <div className="text-center">
-                {iconMap["💰"]}
-                <h3 className="mt-4 text-xl font-semibold">Affordable</h3>
-                <p className="mt-2 text-gray-500">₹1-3 Lakhs for complete implementation (not ₹10-50 Lakhs). No annual license fees. Just low hosting costs.</p>
-              </div>
-              <div className="text-center">
-                {iconMap["⚡"]}
-                <h3 className="mt-4 text-xl font-semibold">Fast</h3>
-                <p className="mt-2 text-gray-500">Go live in 6-8 weeks (not 6-12 months). We implement, migrate data, train your team, and support you after launch.</p>
-              </div>
-              <div className="text-center">
-                {iconMap["🎯"]}
-                <h3 className="mt-4 text-xl font-semibold">Simple</h3>
-                <p className="mt-2 text-gray-500">Built for MSMEs, not Fortune 500s. You don't need an IT team. We handle the technical stuff.</p>
-              </div>
-           </div>
-         </div>
-      </section>
-      
-      {/* Packages Section */}
-      <section id="pricing" className="py-20">
+      {/* ERPNext Partner Section */}
+      <section id="erpnext" className="bg-[#14B8A6] py-20 text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800">Choose Your Package</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-gray-600">Fixed pricing. Clear deliverables. Predictable timelines.</p>
-          <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {/* Starter Package */}
-            <Card className="flex flex-col">
-              <CardHeader className="text-left">
-                <p className="font-semibold text-sm text-[#FF6B35]">Best for Small MSMEs</p>
-                <CardTitle className="text-3xl">Starter</CardTitle>
-                <p className="text-4xl font-bold text-gray-800">₹1,49,000 <span className="text-lg font-normal text-gray-500">(One-time)</span></p>
-                <p className="text-sm text-gray-500">For ₹50L-₹2Cr businesses</p>
-                <p className="text-sm font-semibold">6 weeks to go-live</p>
-              </CardHeader>
-              <CardContent className="flex-1 space-y-3 text-left text-sm text-gray-600">
-                <p className="font-semibold text-gray-800">What's Included:</p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Basic ERP modules (Acct, Inv, Sales)</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Up to 10 users</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Data migration (500 records)</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> 2 training sessions (4 hours)</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> 1 month post-launch support</li>
-                </ul>
-              </CardContent>
-              <div className="p-6">
-                <Button asChild className="w-full rounded-full bg-[#FF6B35] text-white hover:bg-[#FF6B35]/90">
-                  <Link href="#contact">Get Started</Link>
-                </Button>
-              </div>
-            </Card>
-
-            {/* Growth Package */}
-            <Card className="flex flex-col border-2 border-[#FF6B35] shadow-2xl">
-              <CardHeader className="text-left">
-                 <p className="font-semibold text-sm text-[#06D6A0]">⭐ Most Popular</p>
-                <CardTitle className="text-3xl">Growth</CardTitle>
-                <p className="text-4xl font-bold text-gray-800">₹2,49,000 <span className="text-lg font-normal text-gray-500">(One-time)</span></p>
-                <p className="text-sm text-gray-500">For ₹2Cr-₹6Cr businesses</p>
-                <p className="text-sm font-semibold">8 weeks to go-live</p>
-              </CardHeader>
-              <CardContent className="flex-1 space-y-3 text-left text-sm text-gray-600">
-                <p className="font-semibold text-gray-800">Everything in Starter, PLUS:</p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Advanced modules (Mfg, CRM, HR)</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Up to 25 users</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Data migration (2,000 records)</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Custom fields & reports</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Payment gateway integration</li>
-                   <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> 2 months post-launch support</li>
-                </ul>
-              </CardContent>
-              <div className="p-6">
-                <Button asChild size="lg" className="w-full rounded-full bg-[#FF6B35] text-white hover:bg-[#FF6B35]/90">
-                  <Link href="#contact">Choose Growth</Link>
-                </Button>
-              </div>
-            </Card>
-
-            {/* Scale Package */}
-            <Card className="flex flex-col">
-              <CardHeader className="text-left">
-                <p className="font-semibold text-sm text-[#FF6B35]">Best for Established MSMEs</p>
-                <CardTitle className="text-3xl">Scale</CardTitle>
-                <p className="text-4xl font-bold text-gray-800">₹3,99,000+ <span className="text-lg font-normal text-gray-500">(Custom)</span></p>
-                <p className="text-sm text-gray-500">For ₹6Cr-₹15Cr businesses</p>
-                <p className="text-sm font-semibold">10-12 weeks to go-live</p>
-              </CardHeader>
-              <CardContent className="flex-1 space-y-3 text-left text-sm text-gray-600">
-                <p className="font-semibold text-gray-800">Everything in Growth, PLUS:</p>
-                <ul className="space-y-2">
-                   <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Full suite (all modules)</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Unlimited users</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> Custom app development</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> E-commerce integration</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> On-site visit (1-2 days)</li>
-                  <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /> 3 months post-launch support</li>
-                </ul>
-              </CardContent>
-              <div className="p-6">
-                 <Button asChild variant="outline" className="w-full rounded-full border-[#FF6B35] text-[#FF6B35] hover:bg-[#FF6B35]/10 hover:text-[#FF6B35]">
-                  <Link href="#contact">Contact Us</Link>
-                </Button>
-              </div>
-            </Card>
+          <Image src="https://picsum.photos/seed/partnerlogo/150/50" width={150} height={50} alt="ERPNext Official Partner" className="mx-auto mb-6" data-ai-hint="partner logo" />
+          <h2 className="text-4xl font-bold">Official ERPNext Partner in India</h2>
+          <p className="mx-auto mt-4 max-w-2xl">ERP Consultants in India: Delivering certified ERPNext solutions with expertise and support tailored for Indian businesses.</p>
+          <div className="mt-6 space-x-4 font-semibold">
+            <Link href="#" className="hover:underline">ERPNext Bangalore</Link>
+            <span>|</span>
+            <Link href="#" className="hover:underline">ERPNext Mumbai</Link>
+            <span>|</span>
+            <Link href="#" className="hover:underline">ERPNext Pune</Link>
           </div>
-           <p className="mt-8">Not sure which package? <Link href="#contact" className="font-semibold text-[#FF6B35] underline">Book a free consultation</Link> and we'll recommend the right fit.</p>
+          <Button asChild className="mt-8 bg-white text-[#14B8A6] hover:bg-gray-100">
+            <Link href="#">Learn More →</Link>
+          </Button>
         </div>
       </section>
 
-      {/* How it Works Section */}
-      <section className="bg-white py-20">
+      {/* Industries Section */}
+      <section id="industries" className="py-20">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold text-[#1E3A8A]">ERPNext for Your Industry</h2>
+          <h3 className="mt-2 text-lg text-gray-600">AO+ Growth: Industries We Serve</h3>
+          <p className="mx-auto mt-4 max-w-3xl text-gray-600">AO+ Growth is proud to be an official ERPNext partner in India, committed to delivering robust and adaptable ERP solutions for businesses spread across the country. ERPNext is one of the most agile ERP systems, trusted by businesses in over 150 countries. It supports more than 30 languages and is ideal for SMEs in manufacturing, distribution, and services.</p>
+          <div className="mt-12 max-w-4xl mx-auto space-y-6">
+            <div>
+                <div className="flex justify-between mb-1">
+                    <span className="font-semibold text-gray-700">Trading Industry</span>
+                    <span className="font-semibold text-gray-700">35%</span>
+                </div>
+                <Progress value={35} className="h-3 [&>div]:bg-[#14B8A6]" />
+            </div>
+            <div>
+                <div className="flex justify-between mb-1">
+                    <span className="font-semibold text-gray-700">Manufacturing Industry</span>
+                    <span className="font-semibold text-gray-700">40%</span>
+                </div>
+                <Progress value={40} className="h-3 [&>div]:bg-[#14B8A6]" />
+            </div>
+            <div>
+                <div className="flex justify-between mb-1">
+                    <span className="font-semibold text-gray-700">Services Industry</span>
+                    <span className="font-semibold text-gray-700">25%</span>
+                </div>
+                <Progress value={25} className="h-3 [&>div]:bg-[#14B8A6]" />
+            </div>
+          </div>
+          <Button asChild variant="link" className="mt-8 text-[#1E3A8A] font-bold">
+            <Link href="#">All industries we serve →</Link>
+          </Button>
+        </div>
+      </section>
+
+       {/* Modules Section */}
+      <section className="bg-[#F7F9FC] py-20">
         <div className="container mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-800">From Excel to ERP in 5 Simple Steps</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#1E3A8A]">Comprehensive ERP Solutions: ERPNext Modules</h2>
+            <p className="mt-2 text-lg text-gray-600">Explore the essential ERPNext modules</p>
           </div>
-          <div className="relative mt-12">
-            {/* The connecting line */}
-            <div className="absolute left-1/2 top-10 hidden h-[calc(100%-5rem)] w-0.5 -translate-x-1/2 bg-gray-200 md:block"></div>
-            
-            {/* Step 1 */}
-            <div className="relative mb-12 flex flex-col items-center md:flex-row">
-              <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-[#FF6B35] text-white shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2">
-                {iconMap["📞"]}
-              </div>
-              <div className="mt-4 md:mt-0 md:w-1/2 md:pr-12 text-center md:text-right">
-                <p className="font-bold text-gray-500">Week 0</p>
-                <h3 className="text-xl font-bold text-gray-800">Free Consultation</h3>
-                <p className="text-gray-600">30-minute call. We understand your business, challenges, and what you need from an ERP.</p>
-              </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="relative mb-12 flex flex-col-reverse items-center md:flex-row">
-              <div className="mt-4 md:mt-0 md:w-1/2 md:pl-12 text-center md:text-left">
-                <p className="font-bold text-gray-500">Day 2-3</p>
-                <h3 className="text-xl font-bold text-gray-800">Fixed-Price Proposal</h3>
-                <p className="text-gray-600">We send a detailed proposal with clear scope, timeline, deliverables, and pricing. No hidden costs.</p>
-              </div>
-               <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-[#FF6B35] text-white shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2">
-                {iconMap["📄"]}
-              </div>
-            </div>
-            
-             {/* Step 3 */}
-            <div className="relative mb-12 flex flex-col items-center md:flex-row">
-              <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-[#FF6B35] text-white shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2">
-                {iconMap["🚀"]}
-              </div>
-              <div className="mt-4 md:mt-0 md:w-1/2 md:pr-12 text-center md:text-right">
-                <p className="font-bold text-gray-500">Week 1</p>
-                <h3 className="text-xl font-bold text-gray-800">Kickoff & Setup</h3>
-                <p className="text-gray-600">Sign contract, 50% payment, and we start. Requirements gathering, ERP installation, and initial configuration.</p>
-              </div>
-            </div>
-
-            {/* Step 4 */}
-            <div className="relative mb-12 flex flex-col-reverse items-center md:flex-row">
-              <div className="mt-4 md:mt-0 md:w-1/2 md:pl-12 text-center md:text-left">
-                <p className="font-bold text-gray-500">Weeks 2-7</p>
-                <h3 className="text-xl font-bold text-gray-800">Implementation</h3>
-                <p className="text-gray-600">We configure modules, migrate your data from Excel/Tally, customize fields/reports, and test everything.</p>
-              </div>
-               <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-[#FF6B35] text-white shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2">
-                {iconMap["🛠️"]}
-              </div>
-            </div>
-
-            {/* Step 5 */}
-             <div className="relative flex flex-col items-center md:flex-row">
-              <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-[#FF6B35] text-white shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2">
-                {iconMap["✅"]}
-              </div>
-              <div className="mt-4 md:mt-0 md:w-1/2 md:pr-12 text-center md:text-right">
-                <p className="font-bold text-gray-500">Week 8</p>
-                <h3 className="text-xl font-bold text-gray-800">Training & Go-Live</h3>
-                <p className="text-gray-600">Train your team, go live with real data, and provide 1-3 months of post-launch support.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Why Us Section */}
-      <section id="why-us" className="py-20">
-        <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-800">Why MSMEs Trust AO+ Growth</h2>
-            <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="md:col-span-2 grid grid-cols-2 gap-8">
+                <Card>
+                    <CardHeader className="items-center">{iconMap['accounting']}</CardHeader>
+                    <CardContent className="text-center"><CardTitle>Accounting</CardTitle></CardContent>
+                </Card>
                  <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-4">
-                            <span className="text-5xl font-extrabold text-gray-200">01</span>
-                            <span className="text-xl">Proven Expertise</span>
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-sm text-gray-500">Led by Om Prakash Singh, who brings 16+ years managing enterprise infrastructure. We've implemented ERPs for companies much larger than yours—we know what works.</CardContent>
-                 </Card>
-                  <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-4">
-                            <span className="text-5xl font-extrabold text-gray-200">02</span>
-                            <span className="text-xl">MSME-First Approach</span>
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-sm text-gray-500">Fixed pricing (no hourly billing surprises), clear timelines, and straightforward communication. We speak your language, not consultant-speak.</CardContent>
-                 </Card>
-                  <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-4">
-                            <span className="text-5xl font-extrabold text-gray-200">03</span>
-                            <span className="text-xl">We Don't Disappear</span>
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-sm text-gray-500">Many consultants vanish after implementation. We provide 1-3 months post-launch support, plus optional monthly retainers for ongoing help.</CardContent>
-                 </Card>
+                    <CardHeader className="items-center">{iconMap['inventory']}</CardHeader>
+                    <CardContent className="text-center"><CardTitle>Inventory</CardTitle></CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader className="items-center">{iconMap['sales']}</CardHeader>
+                    <CardContent className="text-center"><CardTitle>Sales & CRM</CardTitle></CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader className="items-center">{iconMap['hrms']}</CardHeader>
+                    <CardContent className="text-center"><CardTitle>HRMS</CardTitle></CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader className="items-center">{iconMap['website']}</CardHeader>
+                    <CardContent className="text-center"><CardTitle>Website & E-commerce</CardTitle></CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader className="items-center">{iconMap['manufacturing']}</CardHeader>
+                    <CardContent className="text-center"><CardTitle>Manufacturing</CardTitle></CardContent>
+                </Card>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-2xl font-bold text-[#1E3A8A] mb-4">ERPNext Modules</h3>
+                <p className="text-gray-600 mb-6">ERPNext modules act as crucial components for a flexible ERP system, allowing businesses to tailor their solutions to meet unique requirements. Each module, whether it's finance or HR, helps organizations optimize operations, enhance productivity, and make informed decisions based on data.</p>
+                <Button asChild className="w-full bg-[#FF6600] text-white hover:bg-[#FF6600]/90">
+                    <Link href="#">Explore All Modules →</Link>
+                </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section id="contact" className="bg-[#1E3A8A] py-20 text-white">
+        <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold">Questions About ERP?</h2>
+            <p className="mt-4 text-lg text-gray-200">Connect with Our Expert Team for Further Information!</p>
+            <p className="mt-2 text-gray-300">We're here for you 24/7. Reach out to us for detailed insights and assistance.</p>
+            <div className="mt-8 flex justify-center gap-8">
+                <div className="text-lg">
+                    <p className="font-semibold">Email Address:</p>
+                    <a href="mailto:hello@aoplusgrowth.in" className="hover:underline">hello@aoplusgrowth.in</a>
+                </div>
+                 <div className="text-lg">
+                    <p className="font-semibold">Telephone:</p>
+                    <a href="tel:+917977875818" className="hover:underline">+91-7977-875-818</a>
+                </div>
             </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-orange-500" style={{background: 'linear-gradient(45deg, #FF6B35, #FFAA88)'}}>
-        <div className="container mx-auto text-center text-white">
-          <h2 className="text-3xl font-bold">Ready to Move from Excel to ERP?</h2>
-          <p className="mx-auto mt-4 max-w-2xl">Book a free 30-minute consultation. No sales pitch—we'll genuinely assess if ERP is right for you and recommend the best package.</p>
-          <Card className="mx-auto mt-8 max-w-2xl p-8 text-left">
-            <form className="space-y-4">
-              <div className="space-y-1">
-                <label htmlFor="name" className="text-sm font-medium text-gray-700">Your Name</label>
-                <Input id="name" placeholder="e.g. Anand Mahindra" />
-              </div>
-               <div className="space-y-1">
-                <label htmlFor="company" className="text-sm font-medium text-gray-700">Company Name</label>
-                <Input id="company" placeholder="e.g. Mahindra & Mahindra" />
-              </div>
-              <div className="space-y-1">
-                <label htmlFor="revenue" className="text-sm font-medium text-gray-700">Annual Revenue</label>
-                <Select>
-                  <SelectTrigger id="revenue">
-                    <SelectValue placeholder="Select your revenue range" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="<50L">&lt; ₹50L</SelectItem>
-                    <SelectItem value="50L-1Cr">₹50L - ₹1Cr</SelectItem>
-                    <SelectItem value="1-2Cr">₹1Cr - ₹2Cr</SelectItem>
-                    <SelectItem value="2-5Cr">₹2Cr - ₹5Cr</SelectItem>
-                    <SelectItem value="5-10Cr">₹5Cr - ₹10Cr</SelectItem>
-                    <SelectItem value=">10Cr">&gt; ₹10Cr</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-               <div className="space-y-1">
-                <label htmlFor="challenge" className="text-sm font-medium text-gray-700">Biggest Challenge</label>
-                <Textarea id="challenge" placeholder="e.g., Can't track inventory, manual invoicing takes too long" />
-              </div>
-               <div className="space-y-1">
-                <label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone Number</label>
-                <Input id="phone" type="tel" placeholder="e.g. +91 9820098200" />
-              </div>
-              <Button type="submit" size="lg" className="w-full bg-white text-[#FF6B35] hover:bg-gray-100">
-                Book Free Consultation
-              </Button>
-            </form>
-          </Card>
-          <p className="mt-4 text-sm">Prefer email? Write to us at <a href="mailto:growth@aoplus.in" className="font-semibold underline">growth@aoplus.in</a></p>
+      {/* Testimonials */}
+      <section id="casestudies" className="py-20 bg-[#F7F9FC]">
+        <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold text-[#1E3A8A]">What Our Customers Say</h2>
+             <div className="mt-12 grid gap-8 md:grid-cols-3">
+                <Card className="text-left">
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <Image src="https://picsum.photos/seed/ceo1/60/60" width={60} height={60} alt="Rajesh Kumar" className="rounded-full" data-ai-hint="male headshot" />
+                        <div>
+                            <CardTitle>Rajesh Kumar</CardTitle>
+                            <CardDescription>Founder, Manufacturing Co.</CardDescription>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="italic text-gray-600">"You were right on schedule, charged reasonable prices, were professional and courteous in dealings."</p>
+                    </CardContent>
+                </Card>
+                 <Card className="text-left">
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <Image src="https://picsum.photos/seed/ceo2/60/60" width={60} height={60} alt="Priya Shah" className="rounded-full" data-ai-hint="female headshot" />
+                        <div>
+                            <CardTitle>Priya Shah</CardTitle>
+                            <CardDescription>Director, Trading Co.</CardDescription>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="italic text-gray-600">"I wanted to take a moment to thank AO+ Growth team for the services your team has provided."</p>
+                    </CardContent>
+                </Card>
+                 <Card className="text-left">
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <Image src="https://picsum.photos/seed/ceo3/60/60" width={60} height={60} alt="Amit Patel" className="rounded-full" data-ai-hint="male headshot professional" />
+                        <div>
+                            <CardTitle>Amit Patel</CardTitle>
+                            <CardDescription>CEO, Service Co.</CardDescription>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="italic text-gray-600">"We thank AO+ Growth for making successful implementation and look forward to a long-term alliance."</p>
+                    </CardContent>
+                </Card>
+             </div>
         </div>
       </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="py-20">
+        <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold text-[#1E3A8A]">Latest ERP News & Updates</h2>
+            <div className="mt-12 grid gap-8 md:grid-cols-3">
+                <Card>
+                    <CardContent className="p-0">
+                        <Image src="https://picsum.photos/seed/blog1/400/250" width={400} height={250} alt="Blog 1" className="w-full rounded-t-lg" data-ai-hint="manufacturing factory" />
+                    </CardContent>
+                    <div className="p-6 text-left">
+                        <p className="text-sm text-gray-500">15 Jan</p>
+                        <h3 className="font-bold text-lg mt-2">ERPNext for Manufacturing: Complete Guide</h3>
+                        <p className="text-sm text-gray-600 mt-2">Discover how ERPNext transforms manufacturing operations...</p>
+                        <Button asChild variant="link" className="p-0 mt-4 text-[#1E3A8A] font-bold"><Link href="#">Learn more →</Link></Button>
+                    </div>
+                </Card>
+                <Card>
+                    <CardContent className="p-0">
+                        <Image src="https://picsum.photos/seed/blog2/400/250" width={400} height={250} alt="Blog 2" className="w-full rounded-t-lg" data-ai-hint="gold award" />
+                    </CardContent>
+                    <div className="p-6 text-left">
+                        <p className="text-sm text-gray-500">10 Jan</p>
+                        <h3 className="font-bold text-lg mt-2">AO+ Growth Achieves ERPNext Gold Partner Status</h3>
+                        <p className="text-sm text-gray-600 mt-2">We're thrilled to announce our prestigious upgrade...</p>
+                        <Button asChild variant="link" className="p-0 mt-4 text-[#1E3A8A] font-bold"><Link href="#">Learn more →</Link></Button>
+                    </div>
+                </Card>
+                <Card>
+                    <CardContent className="p-0">
+                        <Image src="https://picsum.photos/seed/blog3/400/250" width={400} height={250} alt="Blog 3" className="w-full rounded-t-lg" data-ai-hint="trading cargo" />
+                    </CardContent>
+                    <div className="p-6 text-left">
+                        <p className="text-sm text-gray-500">05 Jan</p>
+                        <h3 className="font-bold text-lg mt-2">Best ERP Software for Trading Companies</h3>
+                        <p className="text-sm text-gray-600 mt-2">ERP Solutions for Fast-Growing Trading Businesses...</p>
+                        <Button asChild variant="link" className="p-0 mt-4 text-[#1E3A8A] font-bold"><Link href="#">Learn more →</Link></Button>
+                    </div>
+                </Card>
+            </div>
+        </div>
+      </section>
+
     </div>
   );
 }
-
