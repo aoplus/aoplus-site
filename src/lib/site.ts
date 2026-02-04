@@ -6,49 +6,75 @@ export type NavLink = {
   children?: NavLink[];
 };
 
+export type FooterLinkColumn = {
+  title: string;
+  links: NavLink[];
+};
+
 export const siteConfig = {
   name: "AO+ Solutions",
   legalName: "AO+ Solutions Pvt Ltd",
   domain: "aoplus.in",
-  tagline: "Intelligent Infrastructure. Made in India.",
+  tagline: "Building Enterprise Infrastructure Solutions for Modern India",
   shortDesc: "AO+ Solutions is a corporate hub for multiple owned brands, focusing on AI, Cloud, and Digital Marketing solutions.",
   address: "Mumbai, India",
   email: "connect@aoplus.in",
   phone: "+91 12345 67890",
-  foundingYear: 2023,
-  founders: ["Anand", "Ovi"],
+  foundingYear: 2019,
+  founders: ["Om Prakash Singh"],
   social: {
     linkedin: "https://www.linkedin.com/company/aoplusin/",
     twitter: "https://x.com/aoplusin",
   },
   navLinks: [
-    { href: '/', label: 'Home' },
-    { 
-      href: '/services', 
-      label: 'Services',
-      children: [
-        { href: '/services', label: 'All Services' },
-        { href: '/services/digital-launchpad', label: 'Digital Launchpad' },
-        { href: '/services/it-foundation', label: 'IT Foundation' },
-        { href: '/services/digital-growth', label: 'Digital Growth' },
-        { href: '/services/msme-growth-engine', label: 'MSME Growth Engine' },
-        { href: '/services/vertical-growth-marketing', label: 'Vertical Growth Marketing' },
-        { href: '/services/enterprise-ops', label: 'Enterprise Ops' },
-      ]
-    },
-    { href: 'https://erp.aoplus.in/book-consultation/new', label: 'Growth Audit', external: true },
-    { href: '/brand-network', label: 'Brand Network' },
+    { href: '#about', label: 'About' },
+    { href: '#portfolio', label: 'Our Brands' },
+    { href: '#leadership', label: 'Leadership' },
+    { href: '#investors', label: 'Investors' },
     { href: '/careers', label: 'Careers' },
-    { href: '/investors', label: 'Investors' },
+    { href: '#contact', label: 'Contact' },
   ] as NavLink[],
   footerLinks: [
-     { href: 'https://erp.aoplus.in/about/our-story', label: 'Our Story', external: true },
-     { href: '/services', label: 'Services' },
-     { href: '/careers', label: 'Careers' },
-     { href: '/investors', label: 'Investors' },
-  ] as NavLink[],
-  legalLinks: [
-    { href: 'https://erp.aoplus.in/privacy-policy', label: 'Privacy Policy', external: true },
-    { href: 'https://erp.aoplus.in/terms', label: 'Terms of Service', external: true },
-  ] as NavLink[]
+    {
+      title: "Company",
+      links: [
+        { href: "#about", label: "About AO+" },
+        { href: "#portfolio", label: "Our Brands" },
+        { href: "#leadership", label: "Leadership" },
+        { href: "/careers", label: "Careers" },
+        { href: "#contact", label: "Contact" },
+      ],
+    },
+    {
+      title: "Products",
+      links: [
+        { href: "https://prodory.com", label: "Prodory (Cloud FinOps)", external: true },
+        { href: "#portfolio", label: "AO+ Growth (MSME ERP)" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { href: "https://prodory.com/blog", label: "Blog", external: true },
+        { href: "#", label: "Case Studies" },
+        { href: "#", label: "Documentation" },
+      ],
+    },
+    {
+      title: "Investors",
+      links: [
+        { href: "#investors", label: "Why Invest" },
+        { href: "#achievements", label: "Company Metrics" },
+        { href: "mailto:investors@aoplus.in", label: "Contact Investors Team" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { href: "/privacy", label: "Privacy Policy" },
+        { href: "/terms", label: "Terms of Service" },
+        { href: "#", label: "Compliance" },
+      ],
+    },
+  ] as FooterLinkColumn[],
 };
