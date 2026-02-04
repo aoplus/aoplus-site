@@ -31,7 +31,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative -mx-4 -mt-16 sm:-mx-6 md:-mx-8">
         <div className="relative bg-primary text-primary-foreground">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary to-gray-900 opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-gray-900 to-black opacity-90"></div>
           <div className="relative min-h-screen container flex flex-col justify-center text-center">
             <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               Building the Future of Enterprise Cloud & AI Infrastructure
@@ -43,7 +43,7 @@ export default function Home() {
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                 <Link href="https://prodory.com" target="_blank">Explore Prodory</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild size="lg" className="border border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
                 <Link href="#portfolio">View Our Portfolio</Link>
               </Button>
             </div>
@@ -174,12 +174,12 @@ export default function Home() {
                 <h3 className="text-2xl font-bold">Om Prakash Singh</h3>
                 <p className="font-medium text-primary">Founder & CEO</p>
                 <div className="mt-4 space-y-3 text-sm text-muted-foreground">
-                   <p>Om brings 16+ years of enterprise infrastructure experience to AO+ Solutions. Currently serving as Head of Platform Engineering at Nomura, he manages 20,000+ servers and leads strategic infrastructure initiatives including VMware-to-Kubernetes migration programs.</p>
+                   <p>Om brings 16+ years of enterprise infrastructure experience to AO+ Solutions. Currently serving as Head of Platform Engineering at a Global BFSI, he manages 20,000+ servers and leads strategic infrastructure initiatives including VMware-to-Kubernetes migration programs.</p>
                    <p>Prior to founding AO+ Solutions in 2019, Om held senior technical roles managing large-scale cloud infrastructure deployments and platform engineering teams. He founded AO+ Solutions to solve the cloud cost optimization challenges he experienced firsthand—challenges that existing tools either couldn't address or were prohibitively expensive for the Indian market.</p>
                 </div>
                 <ul className="mt-6 space-y-2 text-sm">
                     <li className="flex items-center gap-2"><Briefcase className="h-4 w-4 text-primary" /> 16+ years enterprise infrastructure experience</li>
-                    <li className="flex items-center gap-2"><Building className="h-4 w-4 text-primary" /> Head of Platform Engineering, Nomura</li>
+                    <li className="flex items-center gap-2"><Building className="h-4 w-4 text-primary" /> Head of Platform Engineering, Global BFSI</li>
                     <li className="flex items-center gap-2"><Settings className="h-4 w-4 text-primary" /> Managing 20,000+ servers in production</li>
                     <li className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-primary" /> FinOps Certified Practitioner</li>
                 </ul>
@@ -265,7 +265,7 @@ export default function Home() {
               </div>
                <div className="text-center">
                   <p className="text-5xl font-bold text-primary">20,000+</p>
-                  <p className="mt-2 text-muted-foreground">Servers Managed in Production (Nomura)</p>
+                  <p className="mt-2 text-muted-foreground">Servers Managed in Production (Global BFSI)</p>
               </div>
                <div className="text-center">
                   <p className="text-5xl font-bold text-primary">2026</p>
