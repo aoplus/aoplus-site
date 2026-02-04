@@ -15,7 +15,7 @@ import {
   Scaling,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const StatCard = ({ value, label }: { value: string; label: string }) => (
@@ -139,7 +139,7 @@ export default function Home() {
                 <CardTitle className="mt-4">India-First</CardTitle>
               </CardHeader>
               <CardContent className="text-center text-sm text-muted-foreground">
-                Built with Indian compliance (RBI), pricing, and support hours in mind. We understand the unique needs of Indian enterprises and foreign companies with India operations.
+                Built with Indian compliance requirements (RBI, data residency), pricing expectations, and support hours in mind. We understand the unique needs of Indian enterprises and foreign companies with India operations.
               </CardContent>
             </Card>
             <Card>
