@@ -239,7 +239,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter>
                      <Button asChild variant="link" className="p-0">
-                        <Link href="https://github.com/aoplus/growth" target="_blank" rel="noopener noreferrer">Learn More <ArrowRight /></Link>
+                        <Link href="/growth">Learn More <ArrowRight /></Link>
                     </Button>
                 </CardFooter>
             </Card>
@@ -326,7 +326,7 @@ export default function Home() {
                       <Link href="https://prodory.com" target="_blank">Explore Prodory</Link>
                   </Button>
                   <Button asChild size="lg" variant="secondary">
-                      <Link href="https://github.com/aoplus/growth" target="_blank" rel="noopener noreferrer">Explore AO+ Growth</Link>
+                      <Link href="/growth">Explore AO+ Growth</Link>
                   </Button>
               </div>
               <p className="mt-8 text-sm text-primary-foreground/70">For general inquiries: <a href="mailto:connect@aoplus.in" className="font-semibold underline">connect@aoplus.in</a></p>

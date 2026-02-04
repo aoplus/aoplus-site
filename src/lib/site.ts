@@ -49,7 +49,7 @@ export const siteConfig = {
       title: "Products",
       links: [
         { href: "https://prodory.com", label: "Prodory (Cloud FinOps)", external: true },
-        { href: "https://github.com/aoplus/growth", label: "AO+ Growth (MSME ERP)", external: true },
+        { href: "/growth", label: "AO+ Growth (MSME ERP)" },
       ],
     },
     {
