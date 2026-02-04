@@ -23,11 +23,11 @@ export const brands: Brand[] = [
   {
     id: "aoplus-growth",
     name: "AO+ Growth",
-    domain: "/growth", // Placeholder link
+    domain: "https://github.com/aoplus/growth",
     shortDesc: "Enterprise ERP for MSMEs.",
     role: "Upcoming Product",
     primaryContact: "growth@aoplus.in",
-    linkType: "microsite",
+    linkType: "redirect",
     logoImageId: "aoplus-logo",
   },
   {
